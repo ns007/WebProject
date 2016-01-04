@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/css/hamburgerMenu.css">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <script src="includes/js/jquery-2.1.4.min.js"></script>
+    <script src="includes/js/mySpotGoogleMapScripts.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+    <a href="#" id="userPic">
+        <img src="includes/img/logo.gif">
+        יהלי
+    </a>
+        <img src="includes/img/logo2.gif" id="appLogo">
+        <!--<hamburger></hamburger>-->
+</header>
+<nav>
+    <div class="menu">
+        <ul>
+            <a href="#"><li>LINK ONE</li></a>
+            <a href="#"><li>LINK TWO</li></a>
+            <a href="#"><li>LINK THREE</li></a>
+            <a href="#"><li>LINK FOUR</li></a>
+            <a href="#"><li>LINK FIVE</li></a>
+        </ul>
+    </div>
+</nav>
+<div dir="rtl">
+    <h1><b>הספוט שלי:</b></h1>
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+    <h1 id="spotName">חוף פולג</h1>
+    <h2 id="spotLocation">נתניה,אזור המרכז</h2>
+</div>
+<br>
+<div id="map"></div>
+<div class="rating">
+    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
+</script>
+<script src="includes/js/hamburgerMenu.js"></script>
+</body>
+</html>

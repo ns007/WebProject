@@ -1,0 +1,59 @@
+
+/**/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 80%;
+    width: 40%;
+    left: 30%;
+}
+
+header {
+    display: block;
+    height: 20%;
+    border-bottom: black solid 3px;
+}
+
+#userPic{
+ float: left;
+}
+
+#appLogo{
+    float: left;
+}
+
+header a{
+    display: block;
+}
+
+div span{
+    font-size: 3em;
+    float: right;
+}
+
+#spotName{
+    float: right;
+}
+
+#spotLocation{
+    float: right;
+}
+
+.rating > span {
+    right: 43%;
+    display: inline-block;
+    content: "\2605";
+    position: relative;
+    width: 1.1em;
+    color: #d4e3fc;
+}
+
+.rating > span:hover:before {
+    content: "\2605";
+    position: absolute;
+    color: #1464f6;
+}

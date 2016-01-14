@@ -7,31 +7,30 @@ function initMap() {
         center: {lat: 32.326490, lng: 34.846500},
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };//
-    var map = new google.maps.Map(document.getElementById("map"),
-        mapOptions);
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var markers = [];
 
+    var sql = "select * from spot_74";
     var image = 'includes/img/grey.png';
-    var marker = new google.maps.Marker({
-        position: {lat: 32.326490, lng: 34.846500},
-        map: map,
-        icon: image,
-        title: 'Sironit Beach'
-    });
-
-	 marker.addListener('click', function() {
-	    window.open('includes/views/spotinfo.html','_self',false);
-  	});
-    var marker2 = new google.maps.Marker({
-        position: {lat: 32.3083869, lng: 34.8437168},
-        map: map,
-        title: 'Poleg Beach',
-        icon: image
-    });
-
-    var marker3 = new google.maps.Marker({
-        position: {lat: 32.302905, lng: 34.841614},
-        map: map,
-        title: 'Argaman Beach'
+    var spots = [];
+    $.ajax({
+        url: 'includes/php/getDataFromDB.php',
+        type: 'GET',
+        data: {sql:sql},
+        success: function(data) {
+            spots = JSON.parse(data);
+            var i = 0;
+            spots.forEach(function(spot) {
+                markers[i++] = new google.maps.Marker({
+                    position: {lat: parseFloat(spot.latitude), lng: parseFloat(spot.longitude)},
+                    map: map,
+                    icon: spot.favourite == "1" ? null : image,
+                    title: spot.name
+                }).addListener('click', function() {
+                    window.open('spotinfo.html','_self',false);
+                });
+            });
+        }
     });
 }
 

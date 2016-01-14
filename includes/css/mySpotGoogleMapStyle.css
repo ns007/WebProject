@@ -19,11 +19,16 @@ menu, nav, section { display: block; }
     	padding: 0;
 	}
 }
+
 @media (min-width:590px)
 {
+    .dropdown.hamburgerCl{
+        float: right;
+    }
+
 	#wrapper{
     	height: 433px;
-    	width: 1020px;
+    	width: 90%;
     	margin: 0 auto;
 	}
 	html, body {
@@ -33,6 +38,10 @@ menu, nav, section { display: block; }
     	padding: 0;
 	}
 }
+
+/*
+	--------------------------index----------------------------------
+*/
 #drivingDirections a{
     text-decoration: none;
 }
@@ -162,6 +171,18 @@ label.star.st2:before {
     width:100%;
     direction:rtl;
     margin-top:10px;
+}
+
+#posts > article{
+    text-align: right;
+}
+
+#posts > article > img{
+    float: right;
+}
+
+.postImage{
+    width: 100%;
 }
 
 /*
@@ -385,7 +406,7 @@ label.star.st2:before {
 #headerSpan{
     position: relative;
     top: 17%;
-    left: 11%;
+    margin-left: 11%;
     font-size: 70px;
     font-family: "Edwardian Script ITC";
 }

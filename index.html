@@ -25,8 +25,8 @@
             <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
                 <li class="textAlignedRight"><a href="#">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="includes/views/spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="includes/views/newspot.html">הוסף ספוט</a></li>
+                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
+                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
                 <li class="textAlignedRight"><a href="#">התראות</a></li>
                 <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
@@ -75,15 +75,34 @@
         </section>
         <p class="datatxt">19</p>
     </section>
-    <section class="updateindex">
-    	<section class="updatedata">
-    		<h2 class="updatename">darom surfschool</h2>
-    		<p class="updatetime">עדכן תנאי גלישה לפני 3 דקות</p>
-    	</section>
-    	<section class="updatelogo">
-    		<img src="includes/img/logo.jpg" alt="user">
-    	</section>
+    <br>
+    <section id="posts">
     </section>
+    <script>
+        var sql = "select u.username, p.* from posts_74 p join users_74 u on p.user_id = u.id";
+        var posts = [];
+        $.ajax({
+            url: 'includes/php/getDataFromDB.php',
+            type: 'GET',
+            data: {sql:sql},
+            success: function(data) {
+                posts = JSON.parse(data);
+                posts.forEach(function(spot) {
+                    $('#posts').append("<article>" +
+                            "<img src='includes/img/logo.jpg' alt='user'>" +
+                            "<section>" +
+                            "<br>" +
+                            "<h2>" + spot.username + "</h2>" +
+                            "<p class='updatetime'>"+ "עדכן תנאי גלישה לפני 13 דקות" +"</p>" +
+                            "</section>" +
+                            "<br>" +
+                            "<h2>" + spot.msg + "</h2>" +
+                            "<img class='postImage' src='includes/img/" + spot.img_name + ".png'>" +
+                            "</article>")
+                })
+            }
+        });
+    </script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
     </script>

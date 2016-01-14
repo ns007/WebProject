@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
-    <script src="../js/jquery-2.1.4.min.js"></script>
-    <script src="../js/spots.js"></script>
-    <script src="../js/mySpotGoogleMapScripts.js"></script>
+    <script src="includes/js/jquery-2.1.4.min.js"></script>
+    <script src="includes/js/spots.js"></script>
+    <script src="includes/js/mySpotGoogleMapScripts.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
@@ -15,14 +14,14 @@
 <div id="wrapper">
     <header id="myHeader">
         <a href="#" id="userPic">
-            <img src="../img/logo.jpg">
+            <img src="includes/img/logo.jpg">
         </a>
         <span id="headerSpan">ספוטים</span>
         <div class="dropdown hamburgerCl">
-            <img src="../img/hamburger.jpg" type="button" data-toggle="dropdown"/>
+            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="../../index.html">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="../views/spots.html">ספוטים</a></li>
+                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
                 <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
                 <li class="textAlignedRight"><a href="#">התראות</a></li>
                 <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
@@ -31,7 +30,7 @@
     </header>
     <nav class="spotsNav">
         <div class="dropdown filter">
-            <img src="../img/filter.jpg" type="button" data-toggle="dropdown" id="filterImg"/>
+            <img src="includes/img/filter.jpg" type="button" data-toggle="dropdown" id="filterImg"/>
             <ul class="dropdown-menu pull-right">
                 <li class="li" id="filterHead" style="height: 35px;background: #D6D6D6">פילטר
                 </li>
@@ -59,10 +58,10 @@
                 <li class="li">
                     <label>כיוון שבירה</label> <br>
                     <div id="break1Img">
-                        <img src="../img/break1.jpg" onclick="imgclick1()">
+                        <img src="includes/img/break1.jpg" onclick="imgclick1()">
                     </div>
                     <div id="break2Img">
-                        <img src="../img/break2.jpg" onclick="imgclick2()">
+                        <img src="includes/img/break2.jpg" onclick="imgclick2()">
                     </div>
                 </li>
                 <li>
@@ -79,9 +78,9 @@
             </ul>
         </div>
         <label><input type="text" id="txtSrc" placeholder="...חיפוש"/></label>
-        <input type="image" src="../img/love.jpg" alt="like" width="29" height="26" id="loveBtn">
+        <input type="image" src="includes/img/love.jpg" alt="like" width="29" height="26" id="loveBtn">
     </nav>
-    <div id="map" style="z-index: 20">
+    <div id="map" style="height: 515px">
 
     </div>
 
@@ -89,9 +88,9 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
     </script>
     <section id="shutFilter">
-        <input type="image" src="../img/setting.jpg" alt="filter" width="40" height="39" id="settingBtn">
+        <input type="image" src="includes/img/setting.jpg" alt="filter" width="40" height="39" id="settingBtn">
 
-        <input type="image" src="../img/navigate.jpg" alt="like" width="40" height="39" id="navigateBtn">
+        <input type="image" src="includes/img/navigate.jpg" alt="like" width="40" height="39" id="navigateBtn">
     </section>
 </div>
 </body>

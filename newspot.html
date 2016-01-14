@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="../css/mySpotGoogleMapStyle.css"/>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/hamburgerMenu.css">
+    <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
-    <script src="../js/jquery-2.1.4.min.js"></script>
-    <script src="../js/cruser.js"></script>
+    <script src="includes/js/jquery-2.1.4.min.js"></script>
+    <script src="includes/js/cruser.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
@@ -15,16 +13,16 @@
 <div id="wrapper">
     <header>
         <a href="#" id="userPic">
-           <img src="../img/logo.jpg">
+           <img src="includes/img/logo.jpg">
         </a>
         <a href="#">
-            <img src="../img/logo2.jpg" id="appLogo">
+            <img src="includes/img/logo2.jpg" id="appLogo">
         </a>
         <!--<hamburger></hamburger>-->
         <div class="dropdown hamburgerCl">
-            <img src="../img/hamburger.jpg" type="button" data-toggle="dropdown"/>
+            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="../../index.html">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
                 <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
                 <li class="textAlignedRight"><a href="#">הוסף ספוט</a></li>
                 <li class="textAlignedRight"><a href="#">התראות</a></li>
@@ -42,15 +40,14 @@
     <div id="map">
     </div>
     <footer id="footer1">
-    	<h2 id="addspot">הוסף</h2>
+    	<h2 id="addspot" onclick="addSpot()">הוסף</h2>
     </footer>
     <script>
-		(function(){addSpot();})();
+
 	</script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
     </script>
-    <script src="../js/hamburgerMenu.js"></script>
 </div>
 </body>
 </html>

@@ -18,6 +18,9 @@ function initMap() {
         title: 'Sironit Beach'
     });
 
+	 marker.addListener('click', function() {
+	    window.open ('spotinfo.html','_self',false)
+  	});
     var marker2 = new google.maps.Marker({
         position: {lat: 32.3083869, lng: 34.8437168},
         map: map,

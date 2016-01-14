@@ -7,40 +7,31 @@
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
     <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/cruser.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
 <body>
 <div id="wrapper">
     <header>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
         <a href="#" id="userPic">
-            <img src="../img/logo.jpg">
+           <img src="../img/logo.jpg">
         </a>
-        <img src="../img/logo2.jpg" id="appLogo">
+        <a href="#">
+            <img src="../img/logo2.jpg" id="appLogo">
+        </a>
         <!--<hamburger></hamburger>-->
-    </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                <a href="#">
-                    <li>LINK ONE</li>
-                </a>
-                <a href="#">
-                    <li>LINK TWO</li>
-                </a>
-                <a href="#">
-                    <li>LINK THREE</li>
-                </a>
-                <a href="#">
-                    <li>LINK FOUR</li>
-                </a>
-                <a href="#">
-                    <li>LINK FIVE</li>
-                </a>
+        <div class="dropdown hamburgerCl">
+            <img src="../img/hamburger.jpg" type="button" data-toggle="dropdown"/>
+            <ul id="hamburgerNav" class="dropdown-menu pull-right">
+                <li class="textAlignedRight"><a href="../../index.html">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
+                <li class="textAlignedRight"><a href="#">הוסף ספוט</a></li>
+                <li class="textAlignedRight"><a href="#">התראות</a></li>
+                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
+    
     <section>
         <h2 id="purptxt">ספוט חדש</h2>
         <section id="cruserlogo">

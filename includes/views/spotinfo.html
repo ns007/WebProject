@@ -3,53 +3,54 @@
 <head>
     <link rel="stylesheet" href="../css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/hamburgerMenu.css">
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/mySpotGoogleMapScripts.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
 <body>
 <div id="wrapper">
     <header>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
         <a href="#" id="userPic">
-            <img src="../img/logo.jpg">
+           <img src="../img/logo.jpg">
         </a>
-        <img src="../img/logo2.jpg" id="appLogo">
+        <a href="#">
+            <img src="../img/logo2.jpg" id="appLogo">
+        </a>
         <!--<hamburger></hamburger>-->
-    </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                <a href="#">
-                    <li>LINK ONE</li>
-                </a>
-                <a href="#">
-                    <li>LINK TWO</li>
-                </a>
-                <a href="#">
-                    <li>LINK THREE</li>
-                </a>
-                <a href="#">
-                    <li>LINK FOUR</li>
-                </a>
-                <a href="#">
-                    <li>LINK FIVE</li>
-                </a>
+        <div class="dropdown hamburgerCl">
+            <img src="../img/hamburger.jpg" type="button" data-toggle="dropdown"/>
+            <ul id="hamburgerNav" class="dropdown-menu pull-right">
+                <li class="textAlignedRight"><a href="../../index.html">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
+                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
+                <li class="textAlignedRight"><a href="#">התראות</a></li>
+                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
+    
     <section id="info">
         <h2 id="spotname">הדרומי</h2>
         <p id="txtinfo">תל אביב,אזור מרכז</p>
     </section>
     <div id="map">
     </div>
-    <section class="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-    </section>
+    
+    <div class="cont">
+        <div class="stars">
+            <form action="">
+                <label class="star st1" onclick="changeStars(1)"></label>
+                <label class="star st1" onclick="changeStars(2)"></label>
+                <label class="star st1" onclick="changeStars(3)"></label>
+                <label class="star st1" onclick="changeStars(4)"></label>
+                <label class="star st1" onclick="changeStars(5)"></label>
+            </form>
+        </div>
+    </div>
+    
     <section id="driving">
     	<section id="carpic">
     		<img src="../img/car.jpg" alt="car" >
@@ -99,7 +100,7 @@
     		<img src="../img/logo.jpg" alt="user">
     	</section>
     </section>
-    <section id=userinfo">
+    <section id="userinfo">
     	<p id="userpost">"בוקר טוב לכל הגולשים , יום מצוין לגולשי הסאפ"</p>
     </section>
     <section id="surfcondition">

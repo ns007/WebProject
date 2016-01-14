@@ -1,5 +1,5 @@
-
-/**/
+/*Created by netanel shilo
+ sagi maday and yaniv sapir*/
 * { margin: 0; padding: 0; }
 
 article, aside, figure, footer, header,
@@ -8,7 +8,9 @@ menu, nav, section { display: block; }
 #drivingDirections a{
     text-decoration: none;
 }
-
+#filterImg{
+	padding: 6px;
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -78,6 +80,7 @@ section span{
 
 .dropdown-menu > li > a:hover{
     background: #a8c6fa;
+    
 }
 
 #drivingDirections{

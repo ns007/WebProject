@@ -5,16 +5,39 @@
 article, aside, figure, footer, header,
 menu, nav, section { display: block; }
 
+@media (max-width:590px)
+{
+	#wrapper{
+    	height: 433px;
+    	width: 100%;
+    	margin: 0 auto;
+	}
+	html, body {
+		width: 557px;
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+	}
+}
+@media (min-width:590px)
+{
+	#wrapper{
+    	height: 433px;
+    	width: 1020px;
+    	margin: 0 auto;
+	}
+	html, body {
+		width: 100%;
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+	}
+}
 #drivingDirections a{
     text-decoration: none;
 }
 #filterImg{
 	padding: 6px;
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 #map {
@@ -22,13 +45,8 @@ html, body {
     width: 100%;
 }
 
-#wrapper{
-    height: 433px;
-    width: 557px;
-    margin: 0 auto;
-}
-
 header {
+	width: 100%;
     display: block;
     height: 139px;
     border-bottom: black solid 3px;
@@ -114,7 +132,7 @@ h1 span {
 }
 
 div.stars {
-    width: 270px;
+    width: 300px;
     display: inline-block;
 }
 
@@ -138,6 +156,12 @@ label.star.st2:before {
     content: '\f005';
     font-family: FontAwesome;
     color: #1464f6;
+}
+.updateindex{
+    height:120px;
+    width:100%;
+    direction:rtl;
+    margin-top:10px;
 }
 
 /*

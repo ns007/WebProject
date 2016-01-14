@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/hamburgerMenu.css">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/cruser.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+        <a href="#" id="userPic">
+            <img src="../img/logo.jpg">
+        </a>
+        <img src="../img/logo2.jpg" id="appLogo">
+        <!--<hamburger></hamburger>-->
+    </header>
+    <nav>
+        <div class="menu">
+            <ul>
+                <a href="#">
+                    <li>LINK ONE</li>
+                </a>
+                <a href="#">
+                    <li>LINK TWO</li>
+                </a>
+                <a href="#">
+                    <li>LINK THREE</li>
+                </a>
+                <a href="#">
+                    <li>LINK FOUR</li>
+                </a>
+                <a href="#">
+                    <li>LINK FIVE</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <h2 id="purptxt">ספוט חדש</h2>
+        <section id="cruserlogo">
+        </section>
+    </section>
+    <br>
+    <div id="map">
+    </div>
+    <footer id="footer1">
+    	<h2 id="addspot">הוסף</h2>
+    </footer>
+    <script>
+		(function(){addSpot();})();
+	</script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
+    </script>
+    <script src="../js/hamburgerMenu.js"></script>
+</div>
+</body>
+</html>

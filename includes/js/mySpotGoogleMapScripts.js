@@ -10,8 +10,6 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById("map"),
         mapOptions);
 
-    //var image = 'includes/img/star.gif';
-
     var image = 'includes/img/grey.png';
     var marker = new google.maps.Marker({
         position: {lat: 32.326490, lng: 34.846500},
@@ -34,3 +32,11 @@ function initMap() {
     });
 }
 
+function changeStars(num){
+    $('.stars label').removeClass("star st2");
+    $('.stars label').addClass("star st1");
+    for(var i = 1; i <= num; i++) {
+        $('.stars label:nth-child(' + i + ')').removeClass("star st1");
+        $('.stars label:nth-child(' + i + ')').addClass("star st2");
+    }
+}

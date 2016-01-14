@@ -1,5 +1,14 @@
 
 /**/
+* { margin: 0; padding: 0; }
+
+article, aside, figure, footer, header,
+menu, nav, section { display: block; }
+
+#drivingDirections a{
+    text-decoration: none;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -41,24 +50,504 @@ section span{
 }
 
 #spotName{
-    float: right;
+    margin-right: 7%;
+    display: inline;
 }
 
 #spotLocation{
-    float: right;
+    margin-right: 3%;
+    display: inline;
 }
 
-.rating > span {
-    right: 43%;
-    display: inline-block;
-    content: "\2605";
+.hamburgerCl{
+    float: right;
     position: relative;
-    width: 1.1em;
+    cursor: pointer;
+    top:30%;
+}
+
+.hamburgerButton{
+    font-size:4em;
+}
+
+.textAlignedRight a{
+    text-align: right;
+    border-bottom:  black solid 1px;
+    font-size: 35px;
+}
+
+.dropdown-menu > li > a:hover{
+    background: #a8c6fa;
+}
+
+#drivingDirections{
+    float: right;
+    width: 100%;
+    direction: rtl;
+    height: 89px;
+    border-bottom:  black solid 1px;
+}
+
+#hamburgerNav{
+    background: #d6d6d6;
+    width: 379px;
+    height: 301px;
+    border-bottom:  black solid 1px;
+}
+
+.cont {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    border-bottom:  black solid 1px;
+}
+
+div.title { font-size: 2em; }
+
+h1 span {
+    font-weight: 300;
+    color: #Fd4;
+}
+
+div.stars {
+    width: 270px;
+    display: inline-block;
+}
+
+label.star {
+    float: right;
+    padding: 10px;
+    font-size: 36px;
+    color: #444;
+    transition: all .2s;
+}
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star.st1:before {
+    content: '\f005';
+    font-family: FontAwesome;
     color: #d4e3fc;
 }
 
-.rating > span:hover:before {
-    content: "\2605";
-    position: absolute;
+label.star.st2:before {
+    content: '\f005';
+    font-family: FontAwesome;
     color: #1464f6;
 }
+
+/*
+	--------------------------New spot-------------------------------
+*/
+#footer1{
+    display: block;
+    height: 50px;
+    width:100%;
+    background:rgb(117, 169, 249);
+    position: relative; bottom:0px;
+}
+#purptxt{
+    text-align:center;
+    color: #460E56;
+    margin:0px;
+}
+#addspot{
+    text-align:center;
+    color: #460E56;
+    margin:0px;
+}
+/*
+	--------------------------spot info-------------------------------
+*/
+
+#info{
+    direction:rtl;
+    padding:20px;
+}
+#spotname{
+    display:inline;
+    color: #460E56;
+    margin-right:50px;
+}
+#txtinfo{
+    display:inline;
+    margin-right:30px;
+    font-size:140%;
+}
+#details{
+    margin:0px;
+    direction:rtl;
+    font-size:200%;
+}
+#dataheader{
+    margin-top:7px;
+    padding:5px;
+    display: block;
+    height: 50px;
+    width:100%;
+    background:rgb(170,170,170);
+    position: relative; bottom:0px;
+    padding-right:10px;
+}
+.rating {
+    height:80px;
+    width:100%;
+    border-bottom: black solid 1px;
+}
+#driving{
+    padding:20px;
+    direction:rtl;
+    height:80px;
+    width:100%;
+    border-bottom: black solid 1px;
+}
+#carpic{
+    height:45px;
+    width:74px;
+    display:inline;
+}
+#driveinst{
+    display:inline;
+    color: #460E56;
+    font-size:200%;
+    margin-right:15px;
+}
+#waterdata{
+    padding:20px;
+    direction:rtl;
+    height:80px;
+    width:100%;
+    border-bottom: black dashed 3px;
+}
+.datapic{
+    margin-right:15px;
+    height:45px;
+    width:74px;
+    display:inline;
+}
+.datatxt{
+    display:inline;
+    font-size:150%;
+    margin-right:15px;
+}
+#datadetails{
+    height:280px;
+    width:100%;
+    background:rgb(214,214,214);
+}
+#datablock{
+    height:280px;
+    width:57%;
+    float: left;
+    padding:30px;
+    direction:rtl;
+}
+#datablock2{
+    height:280px;
+    width:43%;
+    float: left;
+    padding:30px;
+    direction:rtl;
+}
+.datahead{
+    padding-right:40px;
+    font-size:130%;
+    margin:0px;
+    border-right: rgb(170,170,170) solid 2px;
+}
+.datainfo{
+    padding-right:40px;
+    font-size:200%;
+    margin:0px;
+    margin-top:-10px;
+    border-right: rgb(170,170,170) solid 2px;
+}
+.datahead2{
+    font-size:130%;
+    margin:0px;
+}
+.datainfo2{
+    font-size:200%;
+    margin:0px;
+    margin-top:-10px;
+}
+.update{
+    border-top: black dashed 3px;
+    height:120px;
+    width:100%;
+    direction:rtl;
+    margin-top:10px;
+}
+.updatedata{
+    margin-top:30px;
+    display:block;
+    float:left;
+    height:60%;
+    width:70%;
+}
+.updatename{
+    color: #460E56;
+    margin:0px;
+}
+.updatetime{
+    font-size: 140%;
+}
+
+.updatelogo{
+    display:block;
+    float:right;
+    height:60%;
+    width:30%;
+}
+#userinfo{
+    display:block;
+    width:100%;
+}
+#userpost{
+    direction:rtl;
+    font-size:160%;
+}
+#surfcondition{
+    padding:5px;
+    height:50px;
+    width:100%;
+    background:rgb(235,235,235);
+}
+#surfcon{
+    float:right;
+    display:inline;
+    margin-right:4px;
+    font-size:150%;
+    direction:rtl;
+    color: #460E56;
+    margin:0px;
+}
+#userupdate{
+    height:120px;
+    width:100%;
+    background:rgb(150,150,150);
+}
+.updatepar{
+    padding-top:35px;
+    padding-right:20px;
+    direction:rtl;
+    width:31%;
+    float:left
+}
+#updatepar2{
+    padding-top:35px;
+    direction:rtl;
+    width:38%;
+    float:left
+}
+#datainfo3{
+    display:inline;
+    font-size:200%;
+    margin:0px;
+    margin-top:-10px;
+}
+
+/*
+	------------------------------spots-------------------------------
+*/
+
+#myHeader{
+    position: relative;
+}
+#headerSpan{
+    position: relative;
+    top: 17%;
+    left: 11%;
+    font-size: 70px;
+    font-family: "Edwardian Script ITC";
+}
+#txtSrc{
+    text-align: center;
+    position: relative;
+    top: 4px;
+    -webkit-border-radius: 20px;
+}
+.spotsNav{
+    width: 100%;
+    height: 32px;
+    background:#D6D6D6;
+    position: relative;
+    left: 0;
+    margin: 0;
+    text-align: center;
+}
+#shutFilter{
+    width: 100%;
+    height: 49px;
+    background:#D6D6D6;
+    position: relative;
+}
+#filterBtn{
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+#loveBtn{
+    position: relative;
+    float: left;
+    margin-left: 11px;
+    margin-top: 2px;
+}
+#settingBtn{
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+#navigateBtn{
+    position: relative;
+    float: left;
+    margin-left: 13px;
+    margin-top: 6px;
+}
+.filter{
+    float: right;
+}
+#filterHead{
+    height: 20px;
+    text-align: center;
+}
+.filter > ul > li{
+    width: 336px;
+    list-style-type: none;
+    height: 103px;
+    background: #EBEBEB;
+    text-align: center;
+}
+.break > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
+}
+.radioBtnsCont{
+    margin-top: 20px;
+}
+#break1Img{
+    margin-left: 20px;
+    float: left;
+    cursor: pointer;
+}
+#break2Img{
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+}
+.imgBackgroung{
+    background-color: #690DFF;
+}
+#testDiv{
+    width: 339px;
+    height: 300px;
+    background-color: red;
+}
+
+#rangeInput{
+    margin: 0 auto;
+}
+
+#distRangeInput{
+    margin: 0 auto;
+}
+/*========================range desgin===========================*/
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 60%;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #690DFF;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #5EE8D8;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3.6px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #690DFF;
+}
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #690DFF;
+    border-radius: 25px;
+    border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001c;
+    cursor: pointer;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 12.8px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 39px 0;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #690DFF;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+    background: #690DFF;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001c;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #690DFF;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #690DFF;
+}
+/*===============================================================*/

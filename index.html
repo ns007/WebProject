@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
-    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
-    <link rel="stylesheet" href="includes/css/hamburgerMenu.css">
-    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
     <script src="includes/js/mySpotGoogleMapScripts.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
 <body>
 <div id="wrapper">
     <header>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
         <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
+           <img src="includes/img/logo.jpg">
         </a>
-        <img src="includes/img/logo2.jpg" id="appLogo">
+        <a href="#">
+            <img src="includes/img/logo2.jpg" id="appLogo">
+        </a>
         <!--<hamburger></hamburger>-->
-    </header>
-    <nav>
-        <div class="menu">
-            <ul>
-                <a href="#">
-                    <li>LINK ONE</li>
-                </a>
-                <a href="#">
-                    <li>LINK TWO</li>
-                </a>
-                <a href="#">
-                    <li>LINK THREE</li>
-                </a>
-                <a href="#">
-                    <li>LINK FOUR</li>
-                </a>
-                <a href="#">
-                    <li>LINK FIVE</li>
-                </a>
+        <div class="dropdown hamburgerCl">
+            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
+            <ul id="hamburgerNav" class="dropdown-menu pull-right">
+                <li class="textAlignedRight"><a href="#">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="includes/views/spots.html">ספוטים</a></li>
+                <li class="textAlignedRight"><a href="includes/views/newspot.html">הוסף ספוט</a></li>
+                <li class="textAlignedRight"><a href="#">התראות</a></li>
+                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
+
     <section dir="rtl">
-        <br>
         <h2><b>הספוט שלי:</b></h2>
         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
         <h2 id="spotName">חוף פולג</h2>
@@ -50,13 +40,43 @@
     </section>
     <br>
     <div id="map"></div>
-    <section class="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    <div class="cont">
+        <div class="stars">
+            <form action="">
+                <label class="star st1" onclick="changeStars(1)"></label>
+                <label class="star st1" onclick="changeStars(2)"></label>
+                <label class="star st1" onclick="changeStars(3)"></label>
+                <label class="star st1" onclick="changeStars(4)"></label>
+                <label class="star st1" onclick="changeStars(5)"></label>
+            </form>
+        </div>
+    </div>
+    <section id="driving">
+        <section id="carpic">
+            <img src="includes/img/car.jpg" alt="car" >
+        </section>
+        <p id="driveinst">קבל הוראות נסיעה</p>
+    </section>
+    <section id="waterdata">
+        <section class="datapic">
+            <img src="includes/img/wave-spotdetails.png" alt="car" >
+        </section>
+        <p class="datatxt">מטר 0.5</p>
+        <section class="datapic">
+            <img src="includes/img/clock-spotdetails.png" alt="car" >
+        </section>
+        <p class="datatxt">שניות 23</p>
+        <section class="datapic">
+            <img src="includes/img/tempratur-spotdetails.png" alt="car" >
+        </section>
+        <section class="datapic">
+            <img src="includes/img/celcius-spotdetails.png" alt="car" >
+        </section>
+        <p class="datatxt">19</p>
     </section>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
     </script>
-    <script src="includes/js/hamburgerMenu.js"></script>
 </div>
 </body>
 </html>

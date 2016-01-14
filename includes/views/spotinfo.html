@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/hamburgerMenu.css">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/mySpotGoogleMapScripts.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+        <a href="#" id="userPic">
+            <img src="../img/logo.jpg">
+        </a>
+        <img src="../img/logo2.jpg" id="appLogo">
+        <!--<hamburger></hamburger>-->
+    </header>
+    <nav>
+        <div class="menu">
+            <ul>
+                <a href="#">
+                    <li>LINK ONE</li>
+                </a>
+                <a href="#">
+                    <li>LINK TWO</li>
+                </a>
+                <a href="#">
+                    <li>LINK THREE</li>
+                </a>
+                <a href="#">
+                    <li>LINK FOUR</li>
+                </a>
+                <a href="#">
+                    <li>LINK FIVE</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <section id="info">
+        <h2 id="spotname">הדרומי</h2>
+        <p id="txtinfo">תל אביב,אזור מרכז</p>
+    </section>
+    <div id="map">
+    </div>
+    <section class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </section>
+    <section id="driving">
+    	<section id="carpic">
+    		<img src="../img/car.jpg" alt="car" >
+    	</section>
+    	<p id="driveinst">קבל הוראות נסיעה</p>
+    </section>
+    <section id="waterdata">
+    	<section class="datapic">
+    		<img src="../img/wave-spotdetails.png" alt="car" >
+    	</section>
+    	<p class="datatxt">מטר 0.5</p>
+    	<section class="datapic">
+    		<img src="../img/clock-spotdetails.png" alt="car" >
+    	</section>
+    	<p class="datatxt">שניות 23</p>
+    	<section class="datapic">
+    		<img src="../img/tempratur-spotdetails.png" alt="car" >
+    	</section>
+    	<section class="datapic">
+    		<img src="../img/celcius-spotdetails.png" alt="car" >
+    	</section>
+    	<p class="datatxt">19</p>
+    </section>
+    <section id="dataheader">
+    	<h2 id="details">פרטי חוף</h2>
+    </section>
+    <section id="datadetails">
+    	<section id="datablock">
+    		<p class="datahead">רוח מיטבית</p><p class="datainfo">צפון מערבית</p>
+    		<p class="datahead">רמה ממולצת</p><p class="datainfo">מתחילים</p>
+    		<p class="datahead">עונה</p><p class="datainfo">אוגוסט - ספטמבר</p>
+    		<p class="datahead">סוג שבירה</p><p class="datainfo">שבירת חוף</p>
+    	</section>
+    	<section id="datablock2">
+    		<p class="datahead2">סוג שבירה</p><p class="datainfo2">שבירת חוף</p>
+    		<p class="datahead2">כיוון שבירה</p><p class="datainfo2">ימין ושמאל</p>
+    		<p class="datahead2">סוג תחתית</p><p class="datainfo2">חולית</p>
+    		<p class="datahead2">גובה גל</p><p class="datainfo2">מטר 0-1.5</p>
+    	</section>
+    </section>
+    <section class="update">
+    	<section class="updatedata">
+    		<h2 class="updatename">darom surfschool</h2>
+    		<p class="updatetime">עדכן תנאי גלישה לפני 3 דקות</p>
+    	</section>
+    	<section class="updatelogo">
+    		<img src="../img/logo.jpg" alt="user">
+    	</section>
+    </section>
+    <section id=userinfo">
+    	<p id="userpost">"בוקר טוב לכל הגולשים , יום מצוין לגולשי הסאפ"</p>
+    </section>
+    <section id="surfcondition">
+    	<p id="surfcon">תנאי גלישה,</p>
+    	<img src="../img/like.png" alt="like">
+    </section>
+    <section id="userupdate">
+    	<section class="updatepar">
+    		<p class="datahead2">רוח</p><p class="datainfo2">חלשה</p>
+    	</section>
+    	<section class="updatepar">
+    		<p class="datahead2">רמה</p><p class="datainfo2">מתחילים</p>
+    	</section>
+    	<section id="updatepar2">
+    		<img src="../img/wave-spotdetails.png" alt="wave">
+    		<p id="datainfo3">מטר 0.5</p>
+    	</section>
+    </section>
+    <section class="update">
+    	<section class="updatedata">
+    		<h2 class="updatename">שון דורון</h2>
+    		<p class="updatetime">עדכן תנאי גלישה לפני 56 דקות</p>
+    	</section>
+    	<section id="updatelogo">
+    		<img src="../img/logo.jpg" alt="user">
+    	</section>
+    </section>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
+    </script>
+    <script src="../js/hamburgerMenu.js"></script>
+</div>
+</body>
+</html>

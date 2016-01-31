@@ -42,9 +42,48 @@ menu, nav, section { display: block; }
 /*
 	--------------------------index----------------------------------
 */
+
+.clear{
+    clear: both;
+}
+
+.floatRight{
+    float: right;
+}
+
+.floatleft{
+    float: left;
+}
+
+#favoriteSpot{
+    width: 20%;
+}
+#directions{
+    width: 68%;
+    margin: 0 auto;
+}
+
+#directionsMap{
+    width: 280px;
+    height: 400px;
+    float: left;
+    margin-top: 1.65%;
+}
+
+#panel{
+    width: 300px;
+    float: right;
+}
+
 #drivingDirections a{
     text-decoration: none;
 }
+
+#driving > a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #filterImg{
 	padding: 6px;
 }
@@ -469,6 +508,11 @@ label.star.st2:before {
     background: #EBEBEB;
     text-align: center;
 }
+
+.dropdown-menu{
+    background: #EBEBEB;
+}
+
 .break > input{ /* HIDE RADIO */
     visibility: hidden; /* Makes input not-clickable */
     position: absolute; /* Remove input from document flow */
@@ -495,6 +539,9 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 }
 .imgBackgroung{
     background-color: #690DFF;
+    height: 90px;
+    width: 108px;
+    margin: 0 auto;
 }
 #testDiv{
     width: 339px;

@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
-    <script src="includes/js/spots.js"></script>
     <script src="includes/js/mySpotGoogleMapScripts.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
@@ -58,14 +57,14 @@
                 <li class="li">
                     <label>כיוון שבירה</label> <br>
                     <div id="break1Img">
-                        <img src="includes/img/break1.jpg" onclick="imgclick1()">
+                        <img src="includes/img/break1.jpg" onclick="imgclick1()" width="100" height=87">
                     </div>
                     <div id="break2Img">
-                        <img src="includes/img/break2.jpg" onclick="imgclick2()">
+                        <img src="includes/img/break2.jpg" onclick="imgclick2()" width="100" height=87">
                     </div>
-                </li>
-                <li>
-                    <label>רמת גלישה</label> <br>
+                </li><br>
+                <li class="li">
+                    <label>רמת גלישה</label>
                     <div class="radioBtnsCont">
                         <input type="radio" id="easy" name="level">
                         <label for="rif">קל</label>
@@ -83,9 +82,9 @@
     <div id="map" style="height: 515px">
 
     </div>
-
+    <script src="includes/js/spots.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">
     </script>
     <section id="shutFilter">
         <input type="image" src="includes/img/setting.jpg" alt="filter" width="40" height="39" id="settingBtn">

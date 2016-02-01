@@ -58,7 +58,8 @@ var getDataToIndexPage = function () {
                 position: {lat: parseFloat(spots[i].latitude), lng: parseFloat(spots[i].longitude)},
                 map: self.map,
                 icon: spots[i].favourite == "1" ? null : greyMarkerIconImage,
-                title: spots[i].name
+                title: spots[i].name,
+                spotId: i
             });
             marker.addListener('click', function () {
                 window.open('spotinfo.html', '_self', false);
@@ -100,7 +101,8 @@ var getDataToSpotsPage = function(){
                 position: {lat: parseFloat(spots[i].latitude), lng: parseFloat(spots[i].longitude)},
                 map: self.map,
                 icon: spots[i].favourite == "1" ? null : greyMarkerIconImage,
-                title: spots[i].name
+                title: spots[i].name,
+                spotId: i
             });
             marker.addListener('click', function () {
                 window.open('spotinfo.html', '_self', false);
@@ -243,7 +245,7 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
         str3 = lastModifiedDateDiff.m == 0 ? "" : (lastModifiedDateDiff.m + " דקות");
     }
     else {
-        str3 = lastModifiedDateDiff.m == 0 ? "" : ("ו- " + lastModifiedDateDiff.m + " שניות");
+        str3 = lastModifiedDateDiff.m == 0 ? "" : ("ו- " + lastModifiedDateDiff.m + " דקות");
     }
     return str1 + str2 + str3;
 }

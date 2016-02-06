@@ -112,15 +112,16 @@ header a{
     display: block;
 }
 
-section span{
+#editFavouriteSpot{
     font-size: 2em;
     float: right;
 }
 
-#spotName{
-    margin-right: 7%;
-    display: inline;
-}
+/*#spotName{*/
+    /*margin-right: 7%;*/
+    /*display: inline;*/
+    /*float: right;*/
+/*}*/
 
 #spotLocation{
     margin-right: 3%;
@@ -255,13 +256,23 @@ label.star.st2:before {
 #spotname{
     display:inline;
     color: #460E56;
-    margin-right:50px;
+    float: right;
 }
-#txtinfo{
+.txtinfo{
     display:inline;
-    margin-right:30px;
-    font-size:140%;
+    float: right;
+    position: relative;
+    top: 7px;
 }
+
+#region{
+    margin-right: 10px;
+}
+
+#city{
+    margin-right: 10px;
+}
+
 #details{
     margin:0px;
     direction:rtl;
@@ -387,21 +398,21 @@ label.star.st2:before {
     height:60%;
     width:30%;
 }
-#userinfo{
+.userinfo{
     display:block;
     width:100%;
 }
-#userpost{
+.userpost{
     direction:rtl;
     font-size:160%;
 }
-#surfcondition{
+.surfConditionDetails{
     padding:5px;
     height:50px;
     width:100%;
     background:rgb(235,235,235);
 }
-#surfcon{
+.surfcon{
     float:right;
     display:inline;
     margin-right:4px;
@@ -410,7 +421,7 @@ label.star.st2:before {
     color: #460E56;
     margin:0px;
 }
-#userupdate{
+.userupdate{
     height:120px;
     width:100%;
     background:rgb(150,150,150);
@@ -422,13 +433,13 @@ label.star.st2:before {
     width:31%;
     float:left
 }
-#updatepar2{
+.updatepar2{
     padding-top:35px;
     direction:rtl;
     width:38%;
     float:left
 }
-#datainfo3{
+.datainfo3{
     display:inline;
     font-size:200%;
     margin:0px;

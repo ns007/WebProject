@@ -14,17 +14,24 @@ var filter = {
     distance: true,
     breakType: true,
     breakDir: true,
-    level: true
+    level: true,
+    name: true
 };
 
 var isFiltered = function(marker){
     if(((parseInt(spots[marker.spotId].distance_from_me) >= parseInt($('#distRangeInput').val())) || filter.distance)
     && ((parseFloat(spots[marker.spotId].wave_height) >= parseFloat($('#rangeInput').val())) || filter.waveHeight)
     && ((spots[marker.spotId].wave_break_type == $("input[name='break']").filter(':checked' ).val()) || filter.breakType)
-    && ((spots[marker.spotId].wave_direction == wave_direction.dir) || filter.breakeDir)
-    && ((spots[marker.spotId].surfing_level == $("input[name='level']").filter(':checked' ).val()) || filter.level))
+    && ((spots[marker.spotId].wave_direction == wave_direction.dir) || filter.breakDir)
+    && ((spots[marker.spotId].surfing_level == $("input[name='level']").filter(':checked' ).val()) || filter.level)
+    && ((spots[marker.spotId].name == $("#txtSrc").val().replace("חוף ", "")) || filter.name))
         return true;
     return false;
+}
+
+var setRelevantMarkers = function(){
+    for(var i = 0; i < self.markers.length; i++)
+        self.markers[i].setVisible(isFiltered(self.markers[i]));
 }
 
 var wave_direction = {dir:"ימין"};
@@ -34,38 +41,42 @@ $(function () {
     $('#rangeInput').on('input change', function () {
         $('#rangeText').text(rangeValues[$(this).val()]);
         filter.waveHeight = false;
-        for(var i = 0; i < self.markers.length; i++) {
-            self.markers[i].setVisible(isFiltered(self.markers[i]));
-        }
+        setRelevantMarkers();
     });
     
     $('#distText').text(distValues[$('#distRangeInput').val()]);
     $('#distRangeInput').on('input change', function () {
         $('#distText').text(distValues[$(this).val()]);
         filter.distance = false;
-        for(var i = 0; i < self.markers.length; i++)
-            self.markers[i].setVisible(isFiltered(self.markers[i]));
+        setRelevantMarkers();
     });
 
     $("input[name='break']").change(function(){
         filter.breakType = false;
-        for(var i = 0; i < self.markers.length; i++)
-            self.markers[i].setVisible(isFiltered(self.markers[i]));
+        setRelevantMarkers();
     });
 
     Object.observe(wave_direction, function(changes) {
         filter.breakDir = false;
-        for(var i = 0; i < self.markers.length; i++)
-            self.markers[i].setVisible(isFiltered(self.markers[i]));
+        setRelevantMarkers();
     });
 
 
     $("input[name='level']").change(function(){
         filter.level = false;
-        for(var i = 0; i < self.markers.length; i++)
-            self.markers[i].setVisible(isFiltered(self.markers[i]));
+        setRelevantMarkers();
     });
 
+    $('#txtSrc').on('input',function(e){
+        filter.name = false;
+        if($("#txtSrc").val() == "") {
+            for (var i = 0; i < self.markers.length; i++)
+                self.markers[i].setVisible(true);
+        }
+        else {
+            setRelevantMarkers();
+        }
+    });
 });
 
 function markRightSurfDirection(){

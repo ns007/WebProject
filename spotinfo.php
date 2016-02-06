@@ -25,7 +25,7 @@
         <div class="dropdown hamburgerCl">
             <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="#">דף הבית</a></li>
+                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
                 <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
                 <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
                 <li class="textAlignedRight"><a href="#">התראות</a></li>
@@ -34,14 +34,13 @@
         </div>
     </header>
 
-    <section dir="rtl">
-        <h2><b>הספוט שלי:</b></h2>
-        <span id="editFavouriteSpot" class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#spotsModal"></span>
-        <h2 id="spotName"></h2>
-        <h3 id="spotLocation"></h3>
+    <section id="info">
+        <h2 id="spotname"></h2>
+        <h3><span id="city" class="txtinfo"></span><span id="region" class="txtinfo"></span></h3>
     </section>
-    <br>
-    <div id="map"></div>
+    <div id="map">
+    </div>
+
     <div class="cont">
         <div class="stars">
             <form action="">
@@ -53,6 +52,7 @@
             </form>
         </div>
     </div>
+
     <section id="driving">
         <section id="carpic">
             <img src="includes/img/car.jpg" alt="car">
@@ -76,10 +76,33 @@
         </section>
         <p class="datatxt" id="waveTemp"></p>
     </section>
-    <br>
+    <section id="dataheader">
+        <h2 id="details">פרטי חוף</h2>
+    </section>
+    <section id="datadetails">
+        <section id="datablock">
+            <p class="datahead">רוח מיטבית</p>
+            <p class="datainfo" id="optWind"></p>
+            <p class="datahead">רמה ממולצת</p>
+            <p class="datainfo" id="level">/p>
+            <p class="datahead">עונה</p>
+            <p class="datainfo" id="season"></p>
+            <p class="datahead">סוג שבירה</p>
+            <p class="datainfo" id="waveBreakType"></p>
+        </section>
+        <section id="datablock2">
+            <p class="datahead2">סוג שבירה</p>
+            <p class="datainfo2" id="waveBreakType2"></p>
+            <p class="datahead2">כיוון שבירה</p>
+            <p class="datainfo2" id="waveDirection"></p>
+            <p class="datahead2">סוג תחתית</p>
+            <p class="datainfo2" id="bottomType"></p>
+            <p class="datahead2">גובה גל</p>
+            <p class="datainfo2" id="waveHeightData"></p>
+        </section>
+    </section>
     <section id="posts">
     </section>
-
     <div class="modal fade" id="directionsModal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -100,25 +123,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="spotsModal" role="dialog" dir="rtl">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">בחר ספוט מועדף אחר</h4>
-                </div>
-                <div class="modal-body modal-lg">
-                    <select class="form-control floatRight"  id="favoriteSpot">
-                    </select>
-                    <button class="btn btn-primary floatRight" id="btn1">בחר</button>
-                </div>
-                <div class="clear"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script
+    <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">
     </script>
 </div>

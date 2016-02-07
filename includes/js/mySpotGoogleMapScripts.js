@@ -63,7 +63,7 @@ var assignSpotsToGoogleMapsMarkers = function () {
     })
 }
 
-var createMarker = function(i){
+var createMarker = function (i) {
     var marker = new google.maps.Marker({
         position: {lat: parseFloat(spots[i].latitude), lng: parseFloat(spots[i].longitude)},
         map: self.map,
@@ -79,54 +79,52 @@ var createMarker = function(i){
 
 var getDataToIndexPage = function () {
     $.ajax({
-        url:assignSpotsToGoogleMapsMarkers(),
-        success:function(){
-            for (var i = 0; i < spots.length; i++) {
-                $('#favoriteSpot').append("<option value='" + i + "'>" + "חוף " + spots[i].name + "</option>");
-                if(spots[i].favourite == 1)
-                    chosenSpot = spots[i];
-            }
-            updateSpotData(chosenSpot);
-            google.maps.event.addDomListener(document.getElementById("btn1"), "click", function () {
-                var newFavoriteIndex = $('#favoriteSpot').val();
-                var oldFavoriteIndex = findFavoriteSpotIndexInSpots();
-                if (newFavoriteIndex != oldFavoriteIndex) {
-                    postQueryToDB("update 74_spot set favourite = 0 where id = " + (parseInt(oldFavoriteIndex) + 1)).done(function (data) {
-                        postQueryToDB("update 74_spot set favourite = 1 where id = " + (parseInt(newFavoriteIndex) + 1)).done(function (data) {
-                            spots[newFavoriteIndex].favourite = "1";
-                            spots[oldFavoriteIndex].favourite = "0";
-                            markers[oldFavoriteIndex].setIcon(greyMarkerIconImage);
-                            markers[newFavoriteIndex].setIcon(null);
-                            chosenSpot = spots[newFavoriteIndex];
-                            updateSpotData(spots[newFavoriteIndex]);
-                            mapDetails.positionChanged = true;
-                            $('#spotsModal').modal('hide');
-                        })
-                    })
-                }
-            });
-            indexPagePostsImplementor();
-            initDirectionsMap();
+        url: assignSpotsToGoogleMapsMarkers()
+    }).done(function (data) {
+        for (var i = 0; i < spots.length; i++) {
+            $('#favoriteSpot').append("<option value='" + i + "'>" + "חוף " + spots[i].name + "</option>");
+            if (spots[i].favourite == 1)
+                chosenSpot = spots[i];
         }
+        updateSpotData(chosenSpot);
+        google.maps.event.addDomListener(document.getElementById("btn1"), "click", function () {
+            var newFavoriteIndex = $('#favoriteSpot').val();
+            var oldFavoriteIndex = findFavoriteSpotIndexInSpots();
+            if (newFavoriteIndex != oldFavoriteIndex) {
+                postQueryToDB("update 74_spot set favourite = 0 where id = " + (parseInt(oldFavoriteIndex) + 1)).done(function (data) {
+                    postQueryToDB("update 74_spot set favourite = 1 where id = " + (parseInt(newFavoriteIndex) + 1)).done(function (data) {
+                        spots[newFavoriteIndex].favourite = "1";
+                        spots[oldFavoriteIndex].favourite = "0";
+                        markers[oldFavoriteIndex].setIcon(greyMarkerIconImage);
+                        markers[newFavoriteIndex].setIcon(null);
+                        chosenSpot = spots[newFavoriteIndex];
+                        updateSpotData(spots[newFavoriteIndex]);
+                        mapDetails.positionChanged = true;
+                        $('#spotsModal').modal('hide');
+                    })
+                })
+            }
+        });
+        indexPagePostsImplementor();
+        initDirectionsMap();
     })
 }
 
 var getDataToSpotsPage = function () {
     var availableTags = [];
     $.ajax({
-        url:assignSpotsToGoogleMapsMarkers(),
-        success:function(){
-            for (var i = 0; i < spots.length; i++) {
-                availableTags.push("חוף " + spots[i].name);
-            }
-            $("#txtSrc").autocomplete({
-                source: availableTags,
-                select: function (event, ui) {
-                    $("#txtSrc").val(ui.item ? ui.item.label : "");
-                    setRelevantMarkers();
-                }
-            });
+        url: assignSpotsToGoogleMapsMarkers()
+    }).done(function (data) {
+        for (var i = 0; i < spots.length; i++) {
+            availableTags.push("חוף " + spots[i].name);
         }
+        $("#txtSrc").autocomplete({
+            source: availableTags,
+            select: function (event, ui) {
+                $("#txtSrc").val(ui.item ? ui.item.label : "");
+                setRelevantMarkers();
+            }
+        });
     })
 }
 
@@ -161,17 +159,17 @@ var getDataToSpotInfoPage = function () {
             spotId: spotData.id
         });
         marker.addListener('click', function () {
-            window.open('spotinfo.php?spotId='+spotData.id, '_self', false);
+            window.open('spotinfo.php?spotId=' + spotData.id, '_self', false);
         });
         self.markers.push(marker);
-        changeRankStars(spotData.rank,false);
+        changeRankStars(spotData.rank, false);
     })
 }
 
-var getUrlParams = function(urlLocation){
+var getUrlParams = function (urlLocation) {
     var keyValues = urlLocation.search.substring(1).split("&");
     var params = {};
-    keyValues.forEach(function(keyValue){
+    keyValues.forEach(function (keyValue) {
         var pair = keyValue.split("=");
         params[pair[0]] = pair[1];
     });
@@ -185,6 +183,7 @@ var indexPagePostsImplementor = function () {
         posts = JSON.parse(data);
         posts.forEach(function (post) {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
+            var img = typeof(post.img_name) != "undefined" && post.img_name != "" ? "<img class='postImage' src='includes/img/" + post.img_name + ".png'>" : "";
             $('#posts').append("<article>" +
                 "<img src='includes/img/logo.jpg' alt='user'>" +
                 "<section>" +
@@ -194,7 +193,7 @@ var indexPagePostsImplementor = function () {
                 "</section>" +
                 "<br>" +
                 "<h2>" + post.msg + "</h2>" +
-                "<img class='postImage' src='includes/img/" + post.img_name + ".png'>" +
+                img +
                 "</article>")
         })
     })
@@ -208,35 +207,36 @@ var spotPagePostsImplementor = function () {
         posts.forEach(function (post) {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
             $('#posts').append("<section class='update'>" +
-            "<section class='updatedata'>" +
-            "<h2 class='updatename'>darom surfschool</h2>" +
-            "<p class='updatetime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
-            "</section>" +
-            "<section class='updatelogo'>" +
-            "<img src='includes/img/logo.jpg' alt='user'>" +
-            "</section>" +
-            "</section>" +
-            "<section class='userinfo'>" +
-            "<p class='userpost'>" + post.msg + "</p>" +
-            "</section>" +
-            "<section class='surfConditionDetails'>" +
-            "<p class='surfcon'>תנאי גלישה,</p>" +
-            "<img src='includes/img/like.png' alt='like'>" +
-            "</section>" +
-            "<section class='userupdate'>" +
-            "<section class='updatepar'>" +
-            "<p class='datahead2'>רוח</p>" +
-            "<p class='datainfo2'>" + post.crnt_wind + "</p>" +
-            "</section>" +
-            "<section class='updatepar'>" +
-            "<p class='datahead2'>רמה</p>" +
-            "<p class='datainfo2'>" + post.crnt_level + "</p>" +
-            "</section>" +
-            "<section class='updatepar2'>" +
-            "<img src='includes/img/wave-spotdetails.png' alt='wave'>" +
-            "<p class='datainfo3'>" + post.crnt_wave_height + " מטר" + "</p>" +
-            "</section>" +
-            "</section>")
+                "<section class='updatedata'>" +
+                "<h2 class='updatename'>darom surfschool</h2>" +
+                "<p class='updatetime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
+                "</section>" +
+                "<section class='updatelogo'>" +
+                "<img src='includes/img/logo.jpg' alt='user'>" +
+                "</section>" +
+                "</section>" +
+                "<section class='userinfo'>" +
+                "<p class='userpost'>" + post.msg + "</p>" +
+                "</section>" +
+                "<section class='surfConditionDetails'>" +
+                "<p class='surfcon'>תנאי גלישה,</p>" +
+                "<span class='glyphicon glyphicon-thumbs-up'></span>" +
+                "<img src='includes/img/like.png' alt='like'>" +
+                "</section>" +
+                "<section class='userupdate'>" +
+                "<section class='updatepar'>" +
+                "<p class='datahead2'>רוח</p>" +
+                "<p class='datainfo2'>" + post.crnt_wind + "</p>" +
+                "</section>" +
+                "<section class='updatepar'>" +
+                "<p class='datahead2'>רמה</p>" +
+                "<p class='datainfo2'>" + post.crnt_level + "</p>" +
+                "</section>" +
+                "<section class='updatepar2'>" +
+                "<img src='includes/img/wave-spotdetails.png' alt='wave'>" +
+                "<p class='datainfo3'>" + post.crnt_wave_height + " מטר" + "</p>" +
+                "</section>" +
+                "</section>")
         })
     })
 }

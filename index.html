@@ -14,27 +14,23 @@
 </head>
 <body>
 <div id="wrapper">
-
-    <header>
+    <header id="glbHeader">
         <a href="#" id="userPic">
             <img src="includes/img/logo.jpg">
         </a>
-        <a href="#">
-            <img src="includes/img/logo2.jpg" id="appLogo">
+        <a href="#" id="logo">
         </a>
-        <!--<hamburger></hamburger>-->
-        <div class="dropdown hamburgerCl">
-            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
-            <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="#">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
-                <li class="textAlignedRight"><a href="#">התראות</a></li>
-                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
-            </ul>
-        </div>
+        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
     </header>
-
+    <nav id="navMenu" class="navMenuState">
+        <ul id="menu">
+            <li><a href="#">התראות</a></li>
+            <li><a href="#">עדכון תנאי גלישה</a></li>
+            <li><a href="addspot.html">הוסף ספוט</a></li>
+            <li><a href="spots.html">ספוטים</a></li>
+            <li><a href="#" class="selected">דף הבית</a></li>
+        </ul>
+    </nav>
     <section dir="rtl">
         <h2><b>הספוט שלי:</b></h2>
         <span id="editFavouriteSpot" class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#spotsModal"></span>
@@ -54,28 +50,28 @@
             </form>
         </div>
     </div>
-    <section id="driving">
+    <section id="drvDirections">
         <section id="carpic">
             <img src="includes/img/car.jpg" alt="car">
         </section>
         <a id="driveinst" onclick="openDirectionsModal()">קבל הוראות נסיעה</a>
     </section>
-    <section id="waterdata">
-        <section class="datapic">
+    <section id="waterInfo">
+        <section class="dataPic">
             <img src="includes/img/wave-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveHeight"></p>
-        <section class="datapic">
+        <h3 class="dataTxt paddedWaterInfo" id="waveHeight"></h3>
+        <section class="dataPic">
             <img src="includes/img/clock-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveTiming"></p>
-        <section class="datapic">
+        <h3 class="dataTxt paddedWaterInfo" id="waveTiming"></h3>
+        <section class="dataPic">
             <img src="includes/img/tempratur-spotdetails.png" alt="car">
         </section>
-        <section class="datapic">
+        <section class="dataPic">
             <img src="includes/img/celcius-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveTemp"></p>
+        <h3 class="dataTxt" id="waveTemp"></h3>
     </section>
     <br>
     <section id="posts">
@@ -88,7 +84,7 @@
                     <h4 class="modal-title" dir="rtl">הוראות נסיעה לספוט מועדף</h4>
                 </div>
                 <div class="modal-body modal-lg">
-                    <div id="directions">
+                    <div id="directionsPanel">
                         <div id="directionsMap"></div>
                         <div id="panel"></div>
                     </div>

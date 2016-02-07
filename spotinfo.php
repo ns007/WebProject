@@ -59,22 +59,22 @@
         </section>
         <a id="driveinst" onclick="openDirectionsModal()">קבל הוראות נסיעה</a>
     </section>
-    <section id="waterdata">
-        <section class="datapic">
+    <section id="waterInfo">
+        <section class="dataPic">
             <img src="includes/img/wave-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveHeight"></p>
-        <section class="datapic">
+        <p class="dataTxt" id="waveHeight"></p>
+        <section class="dataPic">
             <img src="includes/img/clock-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveTiming"></p>
-        <section class="datapic">
+        <p class="dataTxt" id="waveTiming"></p>
+        <section class="dataPic">
             <img src="includes/img/tempratur-spotdetails.png" alt="car">
         </section>
-        <section class="datapic">
+        <section class="dataPic">
             <img src="includes/img/celcius-spotdetails.png" alt="car">
         </section>
-        <p class="datatxt" id="waveTemp"></p>
+        <p class="dataTxt" id="waveTemp"></p>
     </section>
     <section id="dataheader">
         <h2 id="details">פרטי חוף</h2>
@@ -110,7 +110,7 @@
                     <h4 class="modal-title" dir="rtl">הוראות נסיעה לספוט מועדף</h4>
                 </div>
                 <div class="modal-body modal-lg">
-                    <div id="directions">
+                    <div id="directionsPanel">
                         <div id="directionsMap"></div>
                         <div id="panel"></div>
                     </div>

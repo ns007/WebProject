@@ -6,7 +6,20 @@ var self = this;
 self.markers = [];
 self.spots = [];
 var chosenSpot = {};
+var hamIsShown = false;
 var greyMarkerIconImage = 'includes/img/grey.png';
+
+var showHam = function(){
+    if(hamIsShown == false){
+        $('#navMenu').addClass('shownMobileMenu');
+        hamIsShown = true;
+    }
+    else{
+        $('#navMenu').removeClass('shownMobileMenu');
+        hamIsShown = false;
+    }
+}
+
 function initMap() {
     var mapOptions = {
         zoom: 13,
@@ -354,3 +367,5 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
     }
     return str1 + str2 + str3;
 }
+
+$('#hamburderButton').click(showHam)

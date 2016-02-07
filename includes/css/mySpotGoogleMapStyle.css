@@ -1,10 +1,11 @@
 /*Created by netanel shilo
  sagi maday and yaniv sapir*/
-* { margin: 0; padding: 0; }
+* { margin: 0 auto; padding: 0; }
 
 article, aside, figure, footer, header,
 menu, nav, section { display: block; }
 
+/************Mobile Design***************/
 @media (max-width:590px)
 {
 	#wrapper{
@@ -12,23 +13,59 @@ menu, nav, section { display: block; }
     	width: 100%;
     	margin: 0 auto;
 	}
+
+    #glbHeader{
+        border-bottom: 3px solid black;
+    }
+
 	html, body {
 		width: 557px;
     	height: 100%;
     	margin: 0;
     	padding: 0;
 	}
-}
 
+    #hamburderButton{
+        display: block;
+        position: absolute;
+        top: 7%;
+        right: 5%;
+    }
+
+    .navMenuState{
+        display: none;
+    }
+
+    #navMenu li a{
+        min-width: 304px;
+    }
+
+    .shownMobileMenu{
+        display: block;
+        position: absolute;
+        width: 304px;
+        z-index: 100;
+        left: 265px;
+        top: 78px;
+    }
+}
+/********End Mobile Design***************/
+
+
+/************Desktop Design**************/
 @media (min-width:590px)
 {
     .dropdown.hamburgerCl{
         float: right;
     }
 
+    .navMenuState{
+
+    }
+
 	#wrapper{
     	height: 433px;
-    	width: 90%;
+    	width: 70%;
     	margin: 0 auto;
 	}
 	html, body {
@@ -37,11 +74,115 @@ menu, nav, section { display: block; }
     	margin: 0;
     	padding: 0;
 	}
+
+    #drvDirections{
+        text-align: center;
+    }
+
+    #waterInfo {
+        text-align: center;
+        padding: 0px;
+    }
+
+    .paddedWaterInfo{
+        padding-left: 20%;
+    }
+    #hamburderButton{
+        display: none;
+    }
 }
 
 /*
 	--------------------------index----------------------------------
 */
+
+/************Checked Css***************/
+/*
+	--------------------------index----------------------------------
+*/
+#glbHeader{
+    width: 100%;
+}
+
+#directionsPanel {
+    width: 68%;
+    margin: 0 auto;
+}
+
+#drvDirections{
+    padding:20px;
+    direction:rtl;
+    height:80px;
+    width:100%;
+    border-bottom: black solid 1px;
+}
+
+#drvDirections > a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#waterInfo {
+    padding:20px;
+    direction:rtl;
+    height:80px;
+    width:100%;
+    border-bottom: black dashed 3px;
+}
+
+#posts > article{
+    text-align: right;
+}
+
+#posts > article > img{
+    float: right;
+}
+/*
+	-----------------------End index----------------------------------
+*/
+/***********End Checked Css************/
+
+/***********nav Menu************/
+#navMenu > ul{
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#navMenu li{
+
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+
+#navMenu li a {
+    display:block;
+    min-width:265.3px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+
+#navMenu li:hover a {
+    background: #19c589;
+}
+#navMenu .selected{
+    background: #19c589;
+}
+/***********End nav Menu************/
+
+
+#logo{
+    display: block;
+    width: 304px;
+    height: 126px;
+    background: url('../img/logo2.jpg');
+}
 
 .clear{
     clear: both;
@@ -58,10 +199,7 @@ menu, nav, section { display: block; }
 #favoriteSpot{
     width: 20%;
 }
-#directions{
-    width: 68%;
-    margin: 0 auto;
-}
+
 
 #directionsMap{
     width: 280px;
@@ -75,14 +213,11 @@ menu, nav, section { display: block; }
     float: right;
 }
 
-#drivingDirections a{
-    text-decoration: none;
-}
+/*#drivingDirections a{*/
+    /*text-decoration: none;*/
+/*}*/
 
-#driving > a{
-    text-decoration: none;
-    cursor: pointer;
-}
+
 
 #filterImg{
 	padding: 6px;
@@ -97,7 +232,6 @@ header {
 	width: 100%;
     display: block;
     height: 139px;
-    border-bottom: black solid 3px;
 }
 
 #userPic{
@@ -129,7 +263,6 @@ header a{
 }
 
 .hamburgerCl{
-    float: right;
     position: relative;
     cursor: pointer;
     top:30%;
@@ -150,13 +283,13 @@ header a{
     
 }
 
-#drivingDirections{
-    float: right;
-    width: 100%;
-    direction: rtl;
-    height: 89px;
-    border-bottom:  black solid 1px;
-}
+/*#drivingDirections{*/
+    /*float: right;*/
+    /*width: 100%;*/
+    /*direction: rtl;*/
+    /*height: 89px;*/
+    /*border-bottom:  black solid 1px;*/
+/*}*/
 
 #hamburgerNav{
     background: #d6d6d6;
@@ -211,14 +344,6 @@ label.star.st2:before {
     width:100%;
     direction:rtl;
     margin-top:10px;
-}
-
-#posts > article{
-    text-align: right;
-}
-
-#posts > article > img{
-    float: right;
 }
 
 .postImage{
@@ -293,13 +418,7 @@ label.star.st2:before {
     width:100%;
     border-bottom: black solid 1px;
 }
-#driving{
-    padding:20px;
-    direction:rtl;
-    height:80px;
-    width:100%;
-    border-bottom: black solid 1px;
-}
+
 #carpic{
     height:45px;
     width:74px;
@@ -311,24 +430,18 @@ label.star.st2:before {
     font-size:200%;
     margin-right:15px;
 }
-#waterdata{
-    padding:20px;
-    direction:rtl;
-    height:80px;
-    width:100%;
-    border-bottom: black dashed 3px;
-}
-.datapic{
+
+.dataPic {
     margin-right:15px;
     height:45px;
     width:74px;
     display:inline;
 }
-.datatxt{
+.dataTxt {
     display:inline;
-    font-size:150%;
     margin-right:15px;
 }
+
 #datadetails{
     height:280px;
     width:100%;

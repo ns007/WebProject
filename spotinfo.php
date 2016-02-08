@@ -14,14 +14,14 @@
 </head>
 <body>
 <div id="wrapper">
-    <header>
+    <!--<header>
         <a href="#" id="userPic">
             <img src="includes/img/logo.jpg">
         </a>
         <a href="#">
             <img src="includes/img/logo2.jpg" id="appLogo">
         </a>
-        <!--<hamburger></hamburger>-->
+        
         <div class="dropdown hamburgerCl">
             <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
@@ -32,8 +32,24 @@
                 <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
+    </header>-->
+	<header id="glbHeader">
+	        <a href="#" id="userPic">
+            <img src="includes/img/logo.jpg">
+        </a>
+        <a href="#" id="logo">
+        </a>
+        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
     </header>
-
+    <nav id="navMenu" class="navMenuState">
+        <ul id="menu">
+            <li><a href="#">התראות</a></li>
+            <li><a href="#">עדכון תנאי גלישה</a></li>
+            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="spots.html">ספוטים</a></li>
+            <li><a href="#" class="selected">דף הבית</a></li>
+        </ul>
+    </nav>
     <section id="info">
         <h2 id="spotname"></h2>
         <h3><span id="city" class="txtinfo"></span><span id="region" class="txtinfo"></span></h3>

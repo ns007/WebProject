@@ -13,7 +13,24 @@
 </head>
 <body>
 <div id="wrapper">
-    <header id="myHeader">
+	<header id="glbHeader">
+        <a href="#" id="userPic">
+            <img src="includes/img/logo.jpg">
+        </a>
+        <a href="#" id="logo">
+        </a>
+        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
+    </header>
+    <nav id="navMenu" class="navMenuState">
+        <ul id="menu">
+            <li><a href="#">התראות</a></li>
+            <li><a href="#">עדכון תנאי גלישה</a></li>
+            <li><a href="addspot.html">הוסף ספוט</a></li>
+            <li><a href="spots.html" class="selected">ספוטים</a></li>
+            <li><a href="index.html">דף הבית</a></li>
+        </ul>
+    </nav>
+    <!--<header id="myHeader">
         <a href="#" id="userPic">
             <img src="includes/img/logo.jpg">
         </a>
@@ -28,7 +45,7 @@
                 <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
-    </header>
+    </header>-->
     <nav class="spotsNav">
         <div class="dropdown filter">
             <img src="includes/img/filter.jpg" type="button" data-toggle="dropdown" id="filterImg"/>
@@ -89,9 +106,9 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">
     </script>
     <section id="shutFilter">
-        <input type="image" src="includes/img/setting.jpg" alt="filter" width="40" height="39" id="settingBtn">
+        <input type="image" src="includes/img/setting.jpg" alt="filter" id="settingBtn">
 
-        <input type="image" src="includes/img/navigate.jpg" alt="like" width="40" height="39" id="navigateBtn">
+        <input type="image" src="includes/img/navigate.jpg" alt="like"  id="navigateBtn">
     </section>
 </div>
 </body>

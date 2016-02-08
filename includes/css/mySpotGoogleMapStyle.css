@@ -8,6 +8,7 @@ menu, nav, section { display: block; }
 /************Mobile Design***************/
 @media (max-width:590px)
 {
+	/*========================all pages======================*/
 	#wrapper{
     	height: 433px;
     	width: 100%;
@@ -48,6 +49,75 @@ menu, nav, section { display: block; }
         left: 265px;
         top: 78px;
     }
+	/*=======================================================*/
+	
+	/*========================index==========================*/
+	
+	/*========================================================*/
+	
+	/*========================spots===========================*/
+	
+	/*========================================================*/
+	
+	/*======================== newSpotForm====================*/
+	.addform{
+		direction: rtl;
+		width:100%;
+	}
+	.inputlbl{
+		background-color:#EEEEEE;
+		margin:20px;
+		width:100%;
+	}
+	.inputtxt{
+		background-color:#DDDDDD;
+		width:100%;
+	}
+	.inputlbl input{
+		border:none;
+		background-color:#EEEEEE;
+		width:100%;
+	}
+	/*===================================================================*/
+	.upload {
+		display:block;
+	    width: 50px;
+	    cursor: pointer;
+	    margin:0px;
+	}
+	
+	.upload input{
+	    display: block;
+	    width: 50px;
+	    height:0px;
+	    display:none;
+	    opacity: 0;
+	    overflow: hidden;
+	    visibility: hidden;
+	}
+	/*
+	input[type='file'] {
+		display:block;
+	    width:50px;
+	    opacity:0;
+	}*/
+	
+	.surflvl{
+		color:#234567;
+		float:left:
+	}
+	.surflvlr{
+		opacity:1;
+		float:right:
+	}
+	.pages{
+		display:block;
+		text-align: center;
+	}
+	.pages[type='radio']{
+		font-size:x-large;
+	}
+	/*========================================================*/
 }
 /********End Mobile Design***************/
 
@@ -55,6 +125,7 @@ menu, nav, section { display: block; }
 /************Desktop Design**************/
 @media (min-width:590px)
 {
+	/*=========================all pages=============================*/
     .dropdown.hamburgerCl{
         float: right;
     }
@@ -75,7 +146,15 @@ menu, nav, section { display: block; }
     	padding: 0;
 	}
 
-    #drvDirections{
+    #hamburderButton{
+        display: none;
+    }
+    #navMenu li a{
+        min-width: 187.8px;
+    }
+	/*===============================================================*/
+	/*=========================index page============================ */
+	 #drvDirections{
         text-align: center;
     }
 
@@ -87,9 +166,13 @@ menu, nav, section { display: block; }
     .paddedWaterInfo{
         padding-left: 20%;
     }
-    #hamburderButton{
-        display: none;
-    }
+	/*================================================================*/
+	
+	/*===============================spots============================*/
+	
+	/*================================================================*/
+
+
 }
 
 /*
@@ -97,13 +180,56 @@ menu, nav, section { display: block; }
 */
 
 /************Checked Css***************/
-/*
-	--------------------------index----------------------------------
-*/
+/* =========================all pages==================================*/
 #glbHeader{
     width: 100%;
 }
+/***********nav Menu************/
+#navMenu > ul{
 
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#navMenu li{
+
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+
+#navMenu li a {
+    display:block;
+    /*min-width:265.3px;*/
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+
+#navMenu li:hover a {
+    background: #19c589;
+}
+#navMenu .selected{
+    background: #19c589;
+}
+/***********End nav Menu************/
+
+
+#logo{
+    display: block;
+    width: 304px;
+    height: 126px;
+    background: url('../img/logo2.jpg');
+}
+/*=====================================================================*/
+
+/*
+	--------------------------index----------------------------------
+*/
 #directionsPanel {
     width: 68%;
     margin: 0 auto;
@@ -140,49 +266,20 @@ menu, nav, section { display: block; }
 /*
 	-----------------------End index----------------------------------
 */
+
+/*===============================spots=================================*/
+#settingBtn{
+	width: 40px;
+	height: 39px;
+}
+#navigateBtn{
+	width: 40px;
+	height: 39px;
+}
+/*=====================================================================*/
 /***********End Checked Css************/
 
-/***********nav Menu************/
-#navMenu > ul{
 
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-#navMenu li{
-
-    display:inline-block;
-    float: left;
-    margin-right: 1px;
-}
-
-#navMenu li a {
-    display:block;
-    min-width:265.3px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    color: #fff;
-    background: #2f3036;
-    text-decoration: none;
-}
-
-#navMenu li:hover a {
-    background: #19c589;
-}
-#navMenu .selected{
-    background: #19c589;
-}
-/***********End nav Menu************/
-
-
-#logo{
-    display: block;
-    width: 304px;
-    height: 126px;
-    background: url('../img/logo2.jpg');
-}
 
 .clear{
     clear: both;
@@ -262,15 +359,15 @@ header a{
     display: inline;
 }
 
-.hamburgerCl{
+/*.hamburgerCl{
     position: relative;
     cursor: pointer;
     top:30%;
-}
+}*/
 
-.hamburgerButton{
+/*.hamburgerButton{
     font-size:4em;
-}
+}*/
 
 .textAlignedRight a{
     text-align: right;

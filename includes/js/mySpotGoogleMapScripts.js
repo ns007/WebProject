@@ -187,7 +187,7 @@ var getUrlParams = function (urlLocation) {
         params[pair[0]] = pair[1];
     });
     return params;
-}
+};
 
 var indexPagePostsImplementor = function () {
     var sql = "select u.username, p.* from 74_posts p join 74_users u on p.user_id = u.id order by p.date desc";

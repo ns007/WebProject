@@ -5,20 +5,21 @@
     <link rel="stylesheet" href="includes/css/bootstrap.min.css">
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
+    <script src="includes/js/mySpotGoogleMapScripts.js"></script>
     <script src="includes/js/cruser.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
 </head>
 <body>
 <div id="wrapper">
-    <header>
+    <!--<header>
         <a href="#" id="userPic">
            <img src="includes/img/logo.jpg">
         </a>
         <a href="#">
             <img src="includes/img/logo2.jpg" id="appLogo">
         </a>
-        <!--<hamburger></hamburger>-->
+        <hamburger></hamburger>
         <div class="dropdown hamburgerCl">
             <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
             <ul id="hamburgerNav" class="dropdown-menu pull-right">
@@ -29,7 +30,24 @@
                 <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
             </ul>
         </div>
+    </header>-->
+    <header id="glbHeader">
+        <a href="#" id="userPic">
+            <img src="includes/img/logo.jpg">
+        </a>
+        <a href="#" id="logo">
+        </a>
+        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
     </header>
+    <nav id="navMenu" class="navMenuState">
+        <ul id="menu">
+            <li><a href="#">התראות</a></li>
+            <li><a href="#">עדכון תנאי גלישה</a></li>
+            <li><a href="newspot.html" class="selected">הוסף ספוט</a></li>
+            <li><a href="spots.html">ספוטים</a></li>
+            <li><a href="index.html" >דף הבית</a></li>
+        </ul>
+    </nav>
     
     <section>
         <h2 id="purptxt">ספוט חדש</h2>

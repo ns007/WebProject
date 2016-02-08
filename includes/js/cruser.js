@@ -60,5 +60,5 @@ function addSpot() {
 };
 
 var adding = function () {
-    alert("lat: " + lat + " lng: " + lng);
+    window.open('newspotform.php', '_self', false);
 };

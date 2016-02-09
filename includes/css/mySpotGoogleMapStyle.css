@@ -10,11 +10,6 @@ menu, nav, section { display: block; }
     margin: 0 auto;
 }
 
-#editFavouriteSpotPencil{
-    font-size: 2em;
-    float: right;
-}
-
 /*=========================AllPages============================*/
 
 #map {
@@ -22,22 +17,61 @@ menu, nav, section { display: block; }
     width: 100%;
 }
 
-/*========================EndAllPages==========================*/
+.clear{
+    clear: both;
+}
 
+.floatRight{
+    float: right;
+}
 
-
-/*========================IndexPage============================*/
-/*===========IndexPageFavouriteSpotDetails==========*/
+.floatleft{
+    float: left;
+}
+/*===================SpotDetails===================*/
 #spotLocation{
     margin-right: 3%;
     display: inline;
 }
 
-#spotname{
+#spotName {
     display:inline;
     float: right;
 }
-/*=========EndIndexPageFavouriteSpotDetails=========*/
+/*=================EndSpotDetails==================*/
+
+/*====================WaterInfo====================*/
+#waterInfo {
+    padding:20px;
+    direction:rtl;
+    height:80px;
+    width:100%;
+    text-align: center;
+    border-bottom: black dashed 3px;
+}
+
+.dataTxt {
+    display:inline;
+    margin-right:15px;
+}
+
+.paddedWaterInfo{
+    padding-left: 20%;
+}
+/*==================EndWaterInfo===================*/
+
+/*========================EndAllPages==========================*/
+
+/*========================IndexPage============================*/
+
+/*===================SpotDetails===================*/
+#editFavouriteSpotPencil{
+    margin-left: 0.8%;
+    font-size: 2em;
+    float: right;
+}
+/*=================EndSpotDetails==================*/
+
 
 /*==============LinkToDrivingDirections=============*/
 #getDrvDirections{
@@ -80,31 +114,7 @@ menu, nav, section { display: block; }
     width: 68%;
     margin: 0 auto;
 }
-
-.clear{
-    clear: both;
-}
 /*============EndLinkToDrivingDirections===========*/
-
-/*====================WaterInfo====================*/
-#waterInfo {
-    padding:20px;
-    direction:rtl;
-    height:80px;
-    width:100%;
-    text-align: center;
-    border-bottom: black dashed 3px;
-}
-
-.dataTxt {
-    display:inline;
-    margin-right:15px;
-}
-
-.paddedWaterInfo{
-    padding-left: 20%;
-}
-/*==================EndWaterInfo===================*/
 
 /*====================Posts====================*/
 #posts > article{
@@ -120,10 +130,15 @@ menu, nav, section { display: block; }
 }
 /*==================EndPosts===================*/
 
-/*=======================EndIndexPage==========================*/
+/*===========EditFavouriteSpotModal============*/
+#favoriteSpot{
+    width: 20%;
+}
+/*========EndEditFavouriteSpotModal===========*/
 
 /*=========================SpotsPage===========================*/
 /*===================Filter====================*/
+
 .spotsNav{
     width: 100%;
     height: 32px;
@@ -132,14 +147,6 @@ menu, nav, section { display: block; }
     left: 0;
     margin: 0;
     text-align: center;
-}
-
-#rangeInput{
-    margin: 0 auto;
-}
-
-#distRangeInput{
-    margin: 0 auto;
 }
 
 #filterImg{
@@ -163,6 +170,7 @@ menu, nav, section { display: block; }
 
 .dropdown-menu{
     background: #EBEBEB;
+    top: 92%;
 }
 
 .radioBtnsCont{
@@ -202,6 +210,13 @@ menu, nav, section { display: block; }
     margin-left: 11px;
     margin-top: 2px;
 }
+/*====================Footer==================*/
+#footerNav {
+    width: 100%;
+    height: 49px;
+    background: #D6D6D6;
+    position: relative;
+}
 
 #settingBtn{
     position: relative;
@@ -215,110 +230,173 @@ menu, nav, section { display: block; }
     margin-left: 13px;
     margin-top: 6px;
 }
-
-/*==================RangeDesign===============*/
-input[type=range] {
-    -webkit-appearance: none;
-    margin: 10px 0;
-    width: 60%;
-}
-input[type=range]:focus {
-    outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #690DFF;
-    border-radius: 25px;
-    border: 0px solid #000101;
-}
-input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #5EE8D8;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -3.6px;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #690DFF;
-}
-input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #690DFF;
-    border-radius: 25px;
-    border: 0px solid #000101;
-}
-input[type=range]::-moz-range-thumb {
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001c;
-    cursor: pointer;
-}
-input[type=range]::-ms-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    border-width: 39px 0;
-    color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-    background: #690DFF;
-    border: 0px solid #000101;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-}
-input[type=range]::-ms-fill-upper {
-    background: #690DFF;
-    border: 0px solid #000101;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-}
-input[type=range]::-ms-thumb {
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001c;
-    cursor: pointer;
-}
-input[type=range]:focus::-ms-fill-lower {
-    background: #690DFF;
-}
-input[type=range]:focus::-ms-fill-upper {
-    background: #690DFF;
-}
-/*===============EndRangeDesign===============*/
-
-/*====================Footer==================*/
-#shutFilter {
-    width: 100%;
-    height: 49px;
-    background: #D6D6D6;
-    position: relative;
-}
 /*==================EndFooter=================*/
 /*========================EndSpotsPage=========================*/
 
 
+/*=======================SpotsInfoPage=========================*/
+/*=================SpotDetails=================*/
+.txtInfo {
+    display:inline;
+    float: right;
+    position: relative;
+    top: 7px;
+}
 
+#spotRegion {
+    margin-right: 10px;
+}
+
+#spotCity {
+    margin-right: 10px;
+}
+
+#spotInfo {
+    direction:rtl;
+}
+
+#spotInfo h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*=================EndSpotDetails==============*/
+
+/*==============ExtendedSpotDetails============*/
+#extendedSpotDetails{
+    direction:rtl;
+}
+
+#extendedSpotDetailsHeader {
+    margin-top:7px;
+    margin-bottom: 0;
+    padding-top:5px;
+    height: 50px;
+    background:#aaaaaa;
+    padding-right:37px;
+}
+
+#extendedSpotDetailsBackground {
+    height:280px;
+    width:100%;
+    background:#dfdfdf;
+}
+
+#spotDataRightBlock {
+    height:280px;
+    width:57%;
+    float: left;
+    padding-top:30px;
+    border-right: #aaaaaa solid 2px;
+}
+
+#spotDataLeftBlock {
+    height:280px;
+    width:43%;
+    float: left;
+    padding-top:30px;
+}
+
+.spotDataKey {
+    padding-right:40px;
+    margin-top: 3px;
+}
+
+.spotDataValue {
+    padding-right:40px;
+    margin-top:-15px;
+    margin-bottom:8px;
+}
+/*==============ExtendedSpotDetails============*/
+
+/*=====================Posts===================*/
+
+.postGeneralDetailsBox{
+    border-top: black dashed 3px;
+    width:100%;
+    direction:rtl;
+    margin-top:10px;
+}
+.postGeneralDetails{
+    margin-top:30px;
+    float:left;
+    width:70%;
+}
+.postUserName{
+    color: #460E56;
+    margin:0px;
+}
+.postUpdateTime{
+    font-size: 140%;
+}
+
+.postMsg{
+    direction:rtl;
+    font-size:160%;
+}
+
+.surfConditionDetails{
+    padding:5px;
+    height:50px;
+    width:100%;
+    background:rgb(235,235,235);
+}
+
+.surfConditionDetails img{
+    float: left;
+}
+
+.surfConditionDetailsHeader{
+    float:right;
+    display:inline;
+    margin-right:4px;
+    font-size:150%;
+    direction:rtl;
+    color: #460E56;
+    margin:0px;
+}
+.userCurrnetConditionsUpdate{
+    height:120px;
+    width:100%;
+    background:rgb(150,150,150);
+}
+.updatePair{
+    padding-top:35px;
+    padding-right:20px;
+    width:33%;
+    float:left
+}
+.waveMeterPair{
+    padding-top:35px;
+    direction:rtl;
+    width:33%;
+    float:left;
+}
+/*===================EndPosts==================*/
+
+/*======================EndSpotsInfoPage=======================*/
+
+/*========================NewpotsPage==========================*/
+/*====================Title====================*/
+#newSpotTitle{
+    text-align:center;
+    color: #460E56;
+    margin:0px;
+}
+#addSpotButton{
+    text-align:center;
+    color: #460E56;
+    margin:0px;
+}
+
+#addNewSpotfooter{
+    display: block;
+    height: 50px;
+    width:100%;
+    background:rgb(117, 169, 249);
+    position: relative; bottom:0px;
+}
+/*===================EndTitle==================*/
+/*=======================EndNewpotsPage========================*/
 
 
 /*=======================MobileDesgin=====================*/

@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/css/HeaderStyle.css"/>
+    <link rel="stylesheet" href="includes/css/navMenu.css"/>
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
-    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
-    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
     <script src="includes/js/mySpotGoogleMapScripts.js"></script>
-    <script src="includes/js/cruser.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="includes/js/cruser.js"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <div id="wrapper">
-    <!--<header>
-        <a href="#" id="userPic">
-           <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#">
-            <img src="includes/img/logo2.jpg" id="appLogo">
-        </a>
-        <hamburger></hamburger>
-        <div class="dropdown hamburgerCl">
-            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
-            <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="#">הוסף ספוט</a></li>
-                <li class="textAlignedRight"><a href="#">התראות</a></li>
-                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
-            </ul>
-        </div>
-    </header>-->
     <header id="glbHeader">
-        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#" id="logo">
-        </a>
-        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
+        <a href="#" id="userPic"></a>
+        <a href="#" id="logo"></a>
+        <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
@@ -45,26 +28,23 @@
             <li><a href="#">עדכון תנאי גלישה</a></li>
             <li><a href="newspot.html" class="selected">הוסף ספוט</a></li>
             <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="index.html" >דף הבית</a></li>
+            <li><a href="index.html">דף הבית</a></li>
         </ul>
     </nav>
-    
     <section>
-        <h2 id="purptxt">ספוט חדש</h2>
-        <section id="cruserlogo">
-        </section>
+        <h2 id="newSpotTitle">ספוט חדש</h2>
     </section>
     <br>
     <div id="map">
     </div>
-    <footer id="footer1">
-    	<h2 id="addspot" onclick="addSpot()">הוסף</h2>
+    <footer id="addNewSpotfooter">
+    	<h2 id="addSpotButton">הוסף</h2>
     </footer>
     <script>
 
 	</script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">
     </script>
 </div>
 </body>

@@ -3,6 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/css/HeaderStyle.css"/>
+    <link rel="stylesheet" href="includes/css/navMenu.css"/>
+    <link rel="stylesheet" href="includes/css/rankingStars.css"/>
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -14,32 +17,10 @@
 </head>
 <body>
 <div id="wrapper">
-    <!--<header>
-        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#">
-            <img src="includes/img/logo2.jpg" id="appLogo">
-        </a>
-        
-        <div class="dropdown hamburgerCl">
-            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
-            <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
-                <li class="textAlignedRight"><a href="#">התראות</a></li>
-                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
-            </ul>
-        </div>
-    </header>-->
-	<header id="glbHeader">
-	        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#" id="logo">
-        </a>
-        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
+    <header id="glbHeader">
+        <a href="#" id="userPic"></a>
+        <a href="#" id="logo"></a>
+        <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
@@ -47,74 +28,62 @@
             <li><a href="#">עדכון תנאי גלישה</a></li>
             <li><a href="newspot.html">הוסף ספוט</a></li>
             <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="#" class="selected">דף הבית</a></li>
+            <li class="firstNavLink"><a href="index.html">דף הבית</a></li>
         </ul>
     </nav>
-    <section id="info">
-        <h2 id="spotname"></h2>
-        <h3><span id="city" class="txtinfo"></span><span id="region" class="txtinfo"></span></h3>
+    <div class="clear"></div>
+    <section id="spotInfo">
+        <h2 id="spotName"></h2>
+        <h3><span id="spotCity" class="txtInfo"></span><span id="spotRegion" class="txtInfo"></span></h3>
     </section>
     <div id="map">
     </div>
-
-    <div class="cont">
+    <div class="starsContainer">
         <div class="stars">
-            <form action="">
-                <label class="star st1" onclick="changeRankStars(1, true)"></label>
-                <label class="star st1" onclick="changeRankStars(2, true)"></label>
-                <label class="star st1" onclick="changeRankStars(3, true)"></label>
-                <label class="star st1" onclick="changeRankStars(4, true)"></label>
-                <label class="star st1" onclick="changeRankStars(5, true)"></label>
-            </form>
+            <label class="star st1"></label>
+            <label class="star st1"></label>
+            <label class="star st1"></label>
+            <label class="star st1"></label>
+            <label class="star st1"></label>
         </div>
     </div>
 
-    <section id="driving">
-        <section id="carpic">
-            <img src="includes/img/car.jpg" alt="car">
-        </section>
-        <a id="driveinst" onclick="openDirectionsModal()">קבל הוראות נסיעה</a>
+    <section id="getDrvDirections">
+        <img src="includes/img/car.jpg" alt="car">
+        <a>קבל הוראות נסיעה</a>
     </section>
     <section id="waterInfo">
-        <section class="dataPic">
-            <img src="includes/img/wave-spotdetails.png" alt="car">
-        </section>
-        <p class="dataTxt" id="waveHeight"></p>
-        <section class="dataPic">
-            <img src="includes/img/clock-spotdetails.png" alt="car">
-        </section>
-        <p class="dataTxt" id="waveTiming"></p>
-        <section class="dataPic">
-            <img src="includes/img/tempratur-spotdetails.png" alt="car">
-        </section>
-        <section class="dataPic">
-            <img src="includes/img/celcius-spotdetails.png" alt="car">
-        </section>
-        <p class="dataTxt" id="waveTemp"></p>
+        <img src="includes/img/wave-spotdetails.png" alt="car">
+        <h3 class="dataTxt paddedWaterInfo" id="waveHeight"></h3>
+        <img src="includes/img/clock-spotdetails.png" alt="car">
+        <h3 class="dataTxt paddedWaterInfo" id="waveTiming"></h3>
+        <img src="includes/img/tempratur-spotdetails.png" alt="car">
+        <img src="includes/img/celcius-spotdetails.png" alt="car">
+        <h3 class="dataTxt" id="waveTemp"></h3>
     </section>
-    <section id="dataheader">
-        <h2 id="details">פרטי חוף</h2>
-    </section>
-    <section id="datadetails">
-        <section id="datablock">
-            <p class="datahead">רוח מיטבית</p>
-            <p class="datainfo" id="optWind"></p>
-            <p class="datahead">רמה ממולצת</p>
-            <p class="datainfo" id="level">/p>
-            <p class="datahead">עונה</p>
-            <p class="datainfo" id="season"></p>
-            <p class="datahead">סוג שבירה</p>
-            <p class="datainfo" id="waveBreakType"></p>
-        </section>
-        <section id="datablock2">
-            <p class="datahead2">סוג שבירה</p>
-            <p class="datainfo2" id="waveBreakType2"></p>
-            <p class="datahead2">כיוון שבירה</p>
-            <p class="datainfo2" id="waveDirection"></p>
-            <p class="datahead2">סוג תחתית</p>
-            <p class="datainfo2" id="bottomType"></p>
-            <p class="datahead2">גובה גל</p>
-            <p class="datainfo2" id="waveHeightData"></p>
+    <section id="extendedSpotDetails">
+        <h2 id="extendedSpotDetailsHeader">פרטי חוף</h2>
+        <section id="extendedSpotDetailsBackground">
+            <section id="spotDataRightBlock">
+                <h4 class="spotDataKey">רוח מיטבית</h4>
+                <h2 class="spotDataValue" id="optWind"></h2>
+                <h4 class="spotDataKey">רמה ממולצת</h4>
+                <h2 class="spotDataValue" id="level">/p>
+                <h4 class="spotDataKey">עונה</h4>
+                <h2 class="spotDataValue" id="season"></h2>
+                <h4 class="spotDataKey">סוג שבירה</h4>
+                <h2 class="spotDataValue" id="waveBreakType"></h2>
+            </section>
+            <section id="spotDataLeftBlock">
+                <h4 class="spotDataKey">סוג שבירה</h4>
+                <h2 class="spotDataValue" id="waveBreakType2"></h2>
+                <h4 class="spotDataKey">כיוון שבירה</h4>
+                <h2 class="spotDataValue" id="waveDirection"></h2>
+                <h4 class="spotDataKey">סוג תחתית</h4>
+                <h2 class="spotDataValue" id="bottomType"></h2>
+                <h4 class="spotDataKey">גובה גל</h4>
+                <h2 class="spotDataValue" id="waveHeightData"></h2>
+            </section>
         </section>
     </section>
     <section id="posts">
@@ -126,9 +95,9 @@
                     <h4 class="modal-title" dir="rtl">הוראות נסיעה לספוט מועדף</h4>
                 </div>
                 <div class="modal-body modal-lg">
-                    <div id="directionsPanel">
+                    <div id="drivingInstrucionsPanel">
                         <div id="directionsMap"></div>
-                        <div id="panel"></div>
+                        <div id="directionsPanel"></div>
                     </div>
                 </div>
                 <div class="clear"></div>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="includes/css/HeaderStyle.css"/>
     <link rel="stylesheet" href="includes/css/navMenu.css"/>
     <link rel="stylesheet" href="includes/css/rankingStars.css"/>
+    <link rel="stylesheet" href="includes/css/styledRangeInputs.css"/>
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -29,7 +30,7 @@
             <li><a href="#">התראות</a></li>
             <li><a href="#">עדכון תנאי גלישה</a></li>
             <li><a href="newspot.html">הוסף ספוט</a></li>
-            <li><a href="spots.html" class="selected">ספוטים</a></li>
+            <li><a href="#" class="selected">ספוטים</a></li>
             <li class="firstNavLink"><a href="index.html">דף הבית</a></li>
         </ul>
     </nav>
@@ -42,12 +43,12 @@
                 </li>
                 <li class="li">
                     <label>גובה גלים</label> <br>
-                    <input type="range" id="rangeInput" name="rangeInput" step="1" min="0" max="20"><br>
+                    <input type="range" name="rangeInput" step="1" min="0" max="20"><br>
                     <label id="rangeText"></label>
                 </li>
                 <li class="li">
                     <label>מרחק</label> <br>
-                    <input type="range" id="distRangeInput" name="rangeInput" step="1" min="1" max="30"><br>
+                    <input type="range" name="rangeInput" step="1" min="1" max="30"><br>
                     <label id="distText"></label>
                 </li>
                 <li class="li">
@@ -93,7 +94,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">
     </script>
-    <section id="shutFilter">
+    <section id="footerNav">
         <input type="image" src="includes/img/setting.jpg" alt="filter" id="settingBtn">
 
         <input type="image" src="includes/img/navigate.jpg" alt="like"  id="navigateBtn">

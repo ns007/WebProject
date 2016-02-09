@@ -10,14 +10,15 @@ var hamIsShown = false;
 var greyMarkerIconImage = 'includes/img/grey.png';
 
 var showHam = function(){
+    var menu = $('#navMenu');
     if(hamIsShown == false){
-        $('#navMenu').addClass('shownMobileMenu');
-        $('#navMenu').removeClass('navMenuState');
+        menu.addClass('shownMobileMenu');
+        menu.removeClass('navMenuState');
         hamIsShown = true;
     }
     else{
-        $('#navMenu').removeClass('shownMobileMenu');
-        $('#navMenu').addClass('navMenuState');
+        menu.removeClass('shownMobileMenu');
+        menu.addClass('navMenuState');
         hamIsShown = false;
     }
 };
@@ -59,18 +60,18 @@ var mapDataManager = function () {
         case "spotinfo":
             getDataToSpotInfoPage();
             break;
+        case "newspot":
+            getDataToNewSpotPage();
+            break;
         default:
             break;
     }
 };
 
 var assignSpotsToGoogleMapsMarkers = function () {
-    var i = 0;
     initMap();
     getDataFromDB("select * from 74_spot").done(function (data) {
         spots = JSON.parse(data);
-        var spot = {};
-        var infoWindow = new google.maps.InfoWindow();
         for (var i = 0; i < spots.length; i++) {
             var marker = createMarker(i);
             self.markers.push(marker);
@@ -93,12 +94,9 @@ var createMarker = function (i) {
 };
 
 var getDataToIndexPage = function () {
-    var i = 0;
     initMap();
     getDataFromDB("select * from 74_spot").done(function (data) {
         spots = JSON.parse(data);
-        var spot = {};
-        var infoWindow = new google.maps.InfoWindow();
         for (var i = 0; i < spots.length; i++) {
             var marker = createMarker(i);
             self.markers.push(marker);
@@ -113,8 +111,8 @@ var getDataToIndexPage = function () {
             var newFavoriteIndex = $('#favoriteSpot').val();
             var oldFavoriteIndex = findFavoriteSpotIndexInSpots();
             if (newFavoriteIndex != oldFavoriteIndex) {
-                postQueryToDB("update 74_spot set favourite = 0 where id = " + (parseInt(oldFavoriteIndex) + 1)).done(function (data) {
-                    postQueryToDB("update 74_spot set favourite = 1 where id = " + (parseInt(newFavoriteIndex) + 1)).done(function (data) {
+                postQueryToDB("update 74_spot set favourite = 0 where id = " + (parseInt(oldFavoriteIndex) + 1)).done(function () {
+                    postQueryToDB("update 74_spot set favourite = 1 where id = " + (parseInt(newFavoriteIndex) + 1)).done(function () {
                         spots[newFavoriteIndex].favourite = "1";
                         spots[oldFavoriteIndex].favourite = "0";
                         markers[oldFavoriteIndex].setIcon(greyMarkerIconImage);
@@ -136,7 +134,7 @@ var getDataToSpotsPage = function () {
     var availableTags = [];
     $.ajax({
         url: assignSpotsToGoogleMapsMarkers()
-    }).done(function (data) {
+    }).done(function () {
         for (var i = 0; i < spots.length; i++) {
             availableTags.push("חוף " + spots[i].name);
         }
@@ -158,9 +156,9 @@ var getDataToSpotInfoPage = function () {
         var spotData = JSON.parse(data)[0];
         chosenSpot = spotData;
         spotPagePostsImplementor();
-        $("#spotname").text(spotData.name);
-        $("#city").text(spotData.city + ",");
-        $("#region").text("אזור ה" + spotData.region);
+        $("#spotName").text(spotData.name);
+        $("#spotCity").text(spotData.city + ",");
+        $("#spotRegion").text("אזור ה" + spotData.region);
         $("#waveHeight").text(spotData.wave_height + " מטר");
         $("#waveTiming").text(spotData.wave_timing + " שניות");
         $("#waveTemp").text(spotData.tempreture);
@@ -186,6 +184,20 @@ var getDataToSpotInfoPage = function () {
         self.markers.push(marker);
         var event = {data:{num: spotData.rank, updatedNeeded:false}};
         changeRankStars(event);
+    });
+};
+
+
+var getDataToNewSpotPage = function () {
+    var availableTags = [];
+    $.ajax({
+        url: assignSpotsToGoogleMapsMarkers()
+    }).done(function () {
+        for (var i = 0; i < spots.length; i++) {
+            availableTags.push("חוף " + spots[i].name);
+        }
+        setMapCurser();
+        $('#addSpotButton').click(addSpot);
     });
 };
 
@@ -226,37 +238,36 @@ var spotPagePostsImplementor = function () {
         posts = JSON.parse(data);
         posts.forEach(function (post) {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
-            $('#posts').append("<section class='update'>" +
-                "<section class='updatedata'>" +
-                "<h2 class='updatename'>darom surfschool</h2>" +
-                "<p class='updatetime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
-                "</section>" +
-                "<section class='updatelogo'>" +
-                "<img src='includes/img/logo.jpg' alt='user'>" +
-                "</section>" +
-                "</section>" +
-                "<section class='userinfo'>" +
-                "<p class='userpost'>" + post.msg + "</p>" +
-                "</section>" +
-                "<section class='surfConditionDetails'>" +
-                "<p class='surfcon'>תנאי גלישה,</p>" +
-                "<span class='glyphicon glyphicon-thumbs-up'></span>" +
-                "<img src='includes/img/like.png' alt='like'>" +
-                "</section>" +
-                "<section class='userupdate'>" +
-                "<section class='updatepar'>" +
-                "<p class='datahead2'>רוח</p>" +
-                "<p class='datainfo2'>" + post.crnt_wind + "</p>" +
-                "</section>" +
-                "<section class='updatepar'>" +
-                "<p class='datahead2'>רמה</p>" +
-                "<p class='datainfo2'>" + post.crnt_level + "</p>" +
-                "</section>" +
-                "<section class='updatepar2'>" +
-                "<img src='includes/img/wave-spotdetails.png' alt='wave'>" +
-                "<p class='datainfo3'>" + post.crnt_wave_height + " מטר" + "</p>" +
-                "</section>" +
-                "</section>");
+            $('#posts').append("<article>" +
+                    "<section class='postGeneralDetailsBox'>" +
+                        "<section class='postGeneralDetails'>" +
+                            "<h2 class='postUserName'>darom surfschool</h2>" +
+                            "<p class='postUpdateTime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
+                        "</section>" +
+                        "<img src='includes/img/logo.jpg' alt='user'>" +
+                        "<p class='postMsg'>" + post.msg + "</p>" +
+                    "</section>" +
+                    "<section class='surfConditionDetails'>" +
+                        "<p class='surfConditionDetailsHeader'>תנאי גלישה,</p>" +
+                        //"<span class='glyphicon glyphicon-thumbs-up'></span>" +
+                        "<img src='includes/img/like.png' alt='like'>" +
+                    "</section>" +
+                    "<section class='userCurrnetConditionsUpdate'>" +
+                        "<section class='updatePair'>" +
+                            "<h4 class='spotDataKey'>רוח</h4>" +
+                            "<h2 class='spotDataValue'>" + post.crnt_wind + "</h2>" +
+                        "</section>" +
+                        "<section class='updatePair'>" +
+                            "<h4 class='spotDataKey'>רמה</h4>" +
+                            "<h2 class='spotDataValue'>" + post.crnt_level + "</h2>" +
+                        "</section>" +
+                        "<section class='waveMeterPair'>" +
+                            "<div class='clear'></div>" +
+                            "<img src='includes/img/wave-spotdetails.png' alt='wave' class='floatRight'>" +
+                            "<h2 class='floatRight'>" + post.crnt_wave_height + " מטר" + "</h2>" +
+                        "</section>" +
+                    "</section>" +
+                "</article>");
         });
     });
 };
@@ -386,4 +397,5 @@ $(document).ready(function() {
     $( ".star.st1" ).each(function( index ) {
         $( this ).click({num: index+1, updatedNeeded: true},changeRankStars);
     });
+
 });

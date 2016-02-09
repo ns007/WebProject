@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+header{
+	display: block;
+}
+/*==================DesktopDesgin===================================*/
+#glbHeader{
+    width: 100%;
+    height: 139px;
+    text-align: center;
+}
+	
+#userPic{
+	background: url('../img/logo.jpg');
+	display: block;
+    width: 139px;
+    height: 124px;
+    float: left;
+}
+#logo{
+	background: url('../img/AppLogo.jpg') no-repeat;
+	display: inline-block;
+    width: 304px;
+    height: 139px;
+    margin: 0 auto;
+}
+#hamburgerButton{
+		display: none;
+}
+
+/*===================EndDesktopDesgin===============================*/
+
+/*==================MobileDesgin=====================================*/
+@media (max-width:600px){
+	#hamburgerButton{
+		display: block;
+		width: 49px;
+		height: 37px;
+		position: absolute;
+		top:5%;
+		right: 7%;
+		background: url('../img/hamburger.jpg');
+	}
+
+	#logo{
+	    float: left;
+	}
+	
+	#glbHeader{
+	    border-bottom: 3px solid black;
+	}
+	
+	.shownMobileMenu{
+        display: block;
+        position: absolute;
+        width: 304px;
+        z-index: 100;
+        left: 265px;
+        top: 78px;
+    }
+}
+/*===================EndMobileDesgin===============================*/

@@ -82,21 +82,21 @@ $(function () {
 function markRightSurfDirection(){
 	var img2 = document.getElementById("break2Img");
     wave_direction.dir = "ימין";
-    if(img2.className == "imgBackgroung"){
+    if(img2.className == "breakDirectionImgBackgroung "){
 		img2.className = "";	
 	}
   	var img1 = document.getElementById("break1Img");
-  	img1.className = "imgBackgroung";
+  	img1.className = "breakDirectionImgBackgroung ";
 }
 
 function markLeftSurfDirection(){
 	var img1 = document.getElementById("break1Img");
     wave_direction.dir = "שמאל";
-    if(img1.className == "imgBackgroung"){
+    if(img1.className == "breakDirectionImgBackgroung "){
 		img1.className = "";	
 	}
   	var img2 = document.getElementById("break2Img");
-  	img2.className = "imgBackgroung";
+  	img2.className = "breakDirectionImgBackgroung ";
 }
 
 $('.dropdown-menu').on('click', function(event){

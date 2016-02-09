@@ -1,0 +1,53 @@
+/***********nav Menu************/
+#navMenu > ul{
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#navMenu li{
+
+    display:inline-block;
+    float: left;
+   	min-width:20%;
+}
+
+#navMenu li:not(.firstNavLink){
+    border-right: 1px solid #ffffff;
+}
+
+#navMenu li a {
+    display:block;
+    text-align: center;
+    line-height: 340%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+
+#navMenu li:hover a {
+    background: #19c589;
+}
+
+#navMenu .selected{
+    background: #19c589;
+}
+
+.navMenuState{}
+/***********End nav Menu************/
+
+
+/*==================MobileDesgin=====================================*/
+@media (max-width:600px){
+	.navMenuState{
+	    display:none;
+	}
+	
+	#navMenu li {
+		min-width: 85.5%;
+		position:relative;
+		left: 5.5%;
+	}
+}
+/*===================EndMobileDesgin===============================*/

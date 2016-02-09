@@ -1,0 +1,30 @@
+.starsContainer {
+    width: 100%;
+    text-align: center;
+    border-bottom:  black solid 1px;
+}
+
+div.stars {
+    display: inline-block;
+    direction:rtl;
+}
+
+label.star {
+    padding: 10px;
+    font-size: 36px;
+    transition: all .2s;
+}
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star.st1:before {
+    content: '\f005';
+    font-family: FontAwesome;
+    color: #d4e3fc;
+}
+
+label.star.st2:before {
+    content: '\f005';
+    font-family: FontAwesome;
+    color: #1464f6;
+}

@@ -12,13 +12,15 @@ var greyMarkerIconImage = 'includes/img/grey.png';
 var showHam = function(){
     if(hamIsShown == false){
         $('#navMenu').addClass('shownMobileMenu');
+        $('#navMenu').removeClass('navMenuState');
         hamIsShown = true;
     }
     else{
         $('#navMenu').removeClass('shownMobileMenu');
+        $('#navMenu').addClass('navMenuState');
         hamIsShown = false;
     }
-}
+};
 
 function initMap() {
     var mapOptions = {
@@ -35,7 +37,7 @@ var getDataFromDB = function (sql) {
         type: 'GET',
         data: {sql: sql}
     });
-}
+};
 
 var postQueryToDB = function (sql) {
     return $.ajax({
@@ -43,7 +45,7 @@ var postQueryToDB = function (sql) {
         type: 'POST',
         data: {sql: sql}
     });
-}
+};
 
 var mapDataManager = function () {
     var url = window.location.href;
@@ -60,7 +62,7 @@ var mapDataManager = function () {
         default:
             break;
     }
-}
+};
 
 var assignSpotsToGoogleMapsMarkers = function () {
     var i = 0;
@@ -73,8 +75,8 @@ var assignSpotsToGoogleMapsMarkers = function () {
             var marker = createMarker(i);
             self.markers.push(marker);
         }
-    })
-}
+    });
+};
 
 var createMarker = function (i) {
     var marker = new google.maps.Marker({
@@ -88,12 +90,19 @@ var createMarker = function (i) {
         window.open('spotinfo.php?spotId=' + (spots[i].id), '_self', false);
     });
     return marker;
-}
+};
 
 var getDataToIndexPage = function () {
-    $.ajax({
-        url: assignSpotsToGoogleMapsMarkers()
-    }).done(function (data) {
+    var i = 0;
+    initMap();
+    getDataFromDB("select * from 74_spot").done(function (data) {
+        spots = JSON.parse(data);
+        var spot = {};
+        var infoWindow = new google.maps.InfoWindow();
+        for (var i = 0; i < spots.length; i++) {
+            var marker = createMarker(i);
+            self.markers.push(marker);
+        }
         for (var i = 0; i < spots.length; i++) {
             $('#favoriteSpot').append("<option value='" + i + "'>" + "חוף " + spots[i].name + "</option>");
             if (spots[i].favourite == 1)
@@ -114,14 +123,14 @@ var getDataToIndexPage = function () {
                         updateSpotData(spots[newFavoriteIndex]);
                         mapDetails.positionChanged = true;
                         $('#spotsModal').modal('hide');
-                    })
-                })
+                    });
+                });
             }
         });
         indexPagePostsImplementor();
         initDirectionsMap();
-    })
-}
+    });
+};
 
 var getDataToSpotsPage = function () {
     var availableTags = [];
@@ -138,8 +147,8 @@ var getDataToSpotsPage = function () {
                 setRelevantMarkers();
             }
         });
-    })
-}
+    });
+};
 
 var getDataToSpotInfoPage = function () {
     var params = getUrlParams(window.location);
@@ -175,9 +184,10 @@ var getDataToSpotInfoPage = function () {
             window.open('spotinfo.php?spotId=' + spotData.id, '_self', false);
         });
         self.markers.push(marker);
-        changeRankStars(spotData.rank, false);
-    })
-}
+        var event = {data:{num: spotData.rank, updatedNeeded:false}};
+        changeRankStars(event);
+    });
+};
 
 var getUrlParams = function (urlLocation) {
     var keyValues = urlLocation.search.substring(1).split("&");
@@ -199,18 +209,15 @@ var indexPagePostsImplementor = function () {
             var img = typeof(post.img_name) != "undefined" && post.img_name != "" ? "<img class='postImage' src='includes/img/" + post.img_name + ".png'>" : "";
             $('#posts').append("<article>" +
                 "<img src='includes/img/logo.jpg' alt='user'>" +
-                "<section>" +
                 "<br>" +
                 "<h2>" + post.username + "</h2>" +
-                "<p class='updatetime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
-                "</section>" +
-                "<br>" +
+                "<h4>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</h4>" +
                 "<h2>" + post.msg + "</h2>" +
                 img +
-                "</article>")
-        })
-    })
-}
+                "</article>");
+        });
+    });
+};
 
 var spotPagePostsImplementor = function () {
     var sql = "select u.username, p.* from 74_posts p join 74_users u on p.user_id = u.id where p.spot_id = " + chosenSpot.id + " order by p.date desc";
@@ -249,10 +256,10 @@ var spotPagePostsImplementor = function () {
                 "<img src='includes/img/wave-spotdetails.png' alt='wave'>" +
                 "<p class='datainfo3'>" + post.crnt_wave_height + " מטר" + "</p>" +
                 "</section>" +
-                "</section>")
-        })
-    })
-}
+                "</section>");
+        });
+    });
+};
 
 var modalOpenedBefore = false;
 var getDirections = function (destination) {
@@ -274,10 +281,10 @@ var getDirections = function (destination) {
             modalOpenedBefore = true;
             google.maps.event.trigger(mapDetails.map, "resize");
         }
-    }
+    };
 
     navigator.geolocation.getCurrentPosition(getRouteRequest);
-}
+};
 
 var initDirectionsMap = function () {
     self.mapDetails = {};
@@ -288,9 +295,9 @@ var initDirectionsMap = function () {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     mapDetails.directionsDisplay.setMap(mapDetails.map);
-    mapDetails.directionsDisplay.setPanel(document.getElementById('panel'));
+    mapDetails.directionsDisplay.setPanel(document.getElementById('directionsPanel'));
     mapDetails.positionChanged = true;
-}
+};
 
 var openDirectionsModal = function () {
 
@@ -299,7 +306,7 @@ var openDirectionsModal = function () {
         mapDetails.positionChanged = false;
     }
     $('#directionsModal').modal('show');
-}
+};
 
 var findFavoriteSpotInSpots = function () {
     var favouriteSpot = {};
@@ -310,7 +317,7 @@ var findFavoriteSpotInSpots = function () {
         }
     }
     return favouriteSpot;
-}
+};
 
 var findFavoriteSpotIndexInSpots = function () {
     var favouriteSpotIndex = -1;
@@ -321,19 +328,22 @@ var findFavoriteSpotIndexInSpots = function () {
         }
     }
     return favouriteSpotIndex;
-}
+};
 
 var updateSpotData = function (spot) {
 
-    changeRankStars(spot.rank, false);
+    var event = {data:{num: spot.rank, updatedNeeded:false}};
+    changeRankStars(event);
     $('#waveHeight').text(spot.wave_height + " מטר");
     $('#waveTiming').text(spot.wave_timing + " שניות");
     $('#waveTemp').text(spot.tempreture);
     $('#spotName').text("חוף " + spot.name);
     $('#spotLocation').text(spot.city + ', אזור ה' + spot.region);
-}
+};
 
-var changeRankStars = function (num, updatedNeeded) {
+var changeRankStars = function (event) {
+    var num = event.data.num;
+    var updatedNeeded = event.data.updatedNeeded;
     $('.stars label').removeClass("star st2");
     $('.stars label').addClass("star st1");
     for (var i = 1; i <= num; i++) {
@@ -343,7 +353,7 @@ var changeRankStars = function (num, updatedNeeded) {
     if (updatedNeeded) {
         postQueryToDB("update 74_spot set rank = " + num + " where id = " + (chosenSpot.id));
     }
-}
+};
 
 
 var getDatesDiff = function (date) {
@@ -352,8 +362,8 @@ var getDatesDiff = function (date) {
         m: Math.floor(diff / 60000 % 60),
         h: Math.floor(diff / 3600000 % 24),
         d: Math.floor(diff / 86400000)
-    }
-}
+    };
+};
 
 var getPassedTimeStringFromLastModifiedPostDate = function (date) {
     var lastModifiedDateDiff = getDatesDiff(date);
@@ -366,6 +376,14 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
         str3 = lastModifiedDateDiff.m == 0 ? "" : ("ו- " + lastModifiedDateDiff.m + " דקות");
     }
     return str1 + str2 + str3;
-}
+};
 
-$('#hamburderButton').click(showHam)
+$(document).ready(function() {
+    $('#getDrvDirections > a').click(openDirectionsModal);
+    $('#hamburgerButton').click(showHam);
+    var stars = $('.star.st1');
+    var i = 1;
+    $( ".star.st1" ).each(function( index ) {
+        $( this ).click({num: index+1, updatedNeeded: true},changeRankStars);
+    });
+});

@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
-    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/css/HeaderStyle.css"/>
+    <link rel="stylesheet" href="includes/css/navMenu.css"/>
+    <link rel="stylesheet" href="includes/css/rankingStars.css"/>
+    <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
+    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="includes/js/mySpotGoogleMapScripts.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="includes/js/mySpotGoogleMapScripts.js"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <div id="wrapper">
-	<header id="glbHeader">
-        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#" id="logo">
-        </a>
-        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
+    <header id="glbHeader">
+        <a href="#" id="userPic"></a>
+        <a href="#" id="logo"></a>
+        <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
             <li><a href="#">התראות</a></li>
             <li><a href="#">עדכון תנאי גלישה</a></li>
-            <li><a href="addspot.html">הוסף ספוט</a></li>
+            <li><a href="newspot.html">הוסף ספוט</a></li>
             <li><a href="spots.html" class="selected">ספוטים</a></li>
-            <li><a href="index.html">דף הבית</a></li>
+            <li class="firstNavLink"><a href="index.html">דף הבית</a></li>
         </ul>
     </nav>
-    <!--<header id="myHeader">
-        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <span id="headerSpan">ספוטים</span>
-        <div class="dropdown hamburgerCl">
-            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
-            <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="index.html">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
-                <li class="textAlignedRight"><a href="#">התראות</a></li>
-                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
-            </ul>
-        </div>
-    </header>-->
+    <div class="clear"></div>
     <nav class="spotsNav">
         <div class="dropdown filter">
             <img src="includes/img/filter.jpg" type="button" data-toggle="dropdown" id="filterImg"/>

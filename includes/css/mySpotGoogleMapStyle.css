@@ -1,241 +1,46 @@
 /*Created by netanel shilo
  sagi maday and yaniv sapir*/
-* { margin: 0 auto; padding: 0; }
+* { margin: 0; padding: 0; }
 
 article, aside, figure, footer, header,
 menu, nav, section { display: block; }
 
-/************Mobile Design***************/
-@media (max-width:590px)
-{
-	/*========================all pages======================*/
-	#wrapper{
-    	height: 433px;
-    	width: 100%;
-    	margin: 0 auto;
-	}
-
-    #glbHeader{
-        border-bottom: 3px solid black;
-    }
-
-	html, body {
-		width: 557px;
-    	height: 100%;
-    	margin: 0;
-    	padding: 0;
-	}
-
-    #hamburderButton{
-        display: block;
-        position: absolute;
-        top: 7%;
-        right: 5%;
-    }
-
-    .navMenuState{
-        display: none;
-    }
-
-    #navMenu li a{
-        min-width: 304px;
-    }
-
-    .shownMobileMenu{
-        display: block;
-        position: absolute;
-        width: 304px;
-        z-index: 100;
-        left: 265px;
-        top: 78px;
-    }
-	/*=======================================================*/
-	
-	/*========================index==========================*/
-	
-	/*========================================================*/
-	
-	/*========================spots===========================*/
-	
-	/*========================================================*/
-	
-	/*======================== newSpotForm====================*/
-	.addform{
-		direction: rtl;
-		width:100%;
-	}
-	.inputlbl{
-		background-color:#EEEEEE;
-		margin:20px;
-		width:100%;
-	}
-	.inputtxt{
-		background-color:#DDDDDD;
-		width:100%;
-	}
-	.inputlbl input{
-		border:none;
-		background-color:#EEEEEE;
-		width:100%;
-	}
-	/*===================================================================*/
-	.upload {
-		display:block;
-	    width: 50px;
-	    cursor: pointer;
-	    margin:0px;
-	}
-	
-	.upload input{
-	    display: block;
-	    width: 50px;
-	    height:0px;
-	    display:none;
-	    opacity: 0;
-	    overflow: hidden;
-	    visibility: hidden;
-	}
-	/*
-	input[type='file'] {
-		display:block;
-	    width:50px;
-	    opacity:0;
-	}*/
-	
-	.surflvl{
-		color:#234567;
-		float:left:
-	}
-	.surflvlr{
-		opacity:1;
-		float:right:
-	}
-	.pages{
-		display:block;
-		text-align: center;
-	}
-	.pages[type='radio']{
-		font-size:x-large;
-	}
-	/*========================================================*/
-}
-/********End Mobile Design***************/
-
-
-/************Desktop Design**************/
-@media (min-width:590px)
-{
-	/*=========================all pages=============================*/
-    .dropdown.hamburgerCl{
-        float: right;
-    }
-
-    .navMenuState{
-
-    }
-
-	#wrapper{
-    	height: 433px;
-    	width: 70%;
-    	margin: 0 auto;
-	}
-	html, body {
-		width: 100%;
-    	height: 100%;
-    	margin: 0;
-    	padding: 0;
-	}
-
-    #hamburderButton{
-        display: none;
-    }
-    #navMenu li a{
-        min-width: 187.8px;
-    }
-	/*===============================================================*/
-	/*=========================index page============================ */
-	 #drvDirections{
-        text-align: center;
-    }
-
-    #waterInfo {
-        text-align: center;
-        padding: 0px;
-    }
-
-    .paddedWaterInfo{
-        padding-left: 20%;
-    }
-	/*================================================================*/
-	
-	/*===============================spots============================*/
-	
-	/*================================================================*/
-
-
-}
-
-/*
-	--------------------------index----------------------------------
-*/
-
-/************Checked Css***************/
-/* =========================all pages==================================*/
-#glbHeader{
-    width: 100%;
-}
-/***********nav Menu************/
-#navMenu > ul{
-
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-#navMenu li{
-
-    display:inline-block;
-    float: left;
-    margin-right: 1px;
-}
-
-#navMenu li a {
-    display:block;
-    /*min-width:265.3px;*/
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    color: #fff;
-    background: #2f3036;
-    text-decoration: none;
-}
-
-#navMenu li:hover a {
-    background: #19c589;
-}
-#navMenu .selected{
-    background: #19c589;
-}
-/***********End nav Menu************/
-
-
-#logo{
-    display: block;
-    width: 304px;
-    height: 126px;
-    background: url('../img/logo2.jpg');
-}
-/*=====================================================================*/
-
-/*
-	--------------------------index----------------------------------
-*/
-#directionsPanel {
-    width: 68%;
+#wrapper{
+    width: 70%;
     margin: 0 auto;
 }
 
-#drvDirections{
+#editFavouriteSpotPencil{
+    font-size: 2em;
+    float: right;
+}
+
+/*=========================AllPages============================*/
+
+#map {
+    height: 443px;
+    width: 100%;
+}
+
+/*========================EndAllPages==========================*/
+
+
+
+/*========================IndexPage============================*/
+/*===========IndexPageFavouriteSpotDetails==========*/
+#spotLocation{
+    margin-right: 3%;
+    display: inline;
+}
+
+#spotname{
+    display:inline;
+    float: right;
+}
+/*=========EndIndexPageFavouriteSpotDetails=========*/
+
+/*==============LinkToDrivingDirections=============*/
+#getDrvDirections{
     padding:20px;
     direction:rtl;
     height:80px;
@@ -243,60 +48,21 @@ menu, nav, section { display: block; }
     border-bottom: black solid 1px;
 }
 
-#drvDirections > a{
+#getDrvDirections > a{
     text-decoration: none;
     cursor: pointer;
 }
 
-#waterInfo {
-    padding:20px;
-    direction:rtl;
-    height:80px;
-    width:100%;
-    border-bottom: black dashed 3px;
+#getDrvDirections{
+    text-align: center;
 }
 
-#posts > article{
-    text-align: right;
+#getDrvDirections > a{
+    display:inline;
+    color: #460E56;
+    font-size:200%;
+    margin-right:15px;
 }
-
-#posts > article > img{
-    float: right;
-}
-/*
-	-----------------------End index----------------------------------
-*/
-
-/*===============================spots=================================*/
-#settingBtn{
-	width: 40px;
-	height: 39px;
-}
-#navigateBtn{
-	width: 40px;
-	height: 39px;
-}
-/*=====================================================================*/
-/***********End Checked Css************/
-
-
-
-.clear{
-    clear: both;
-}
-
-.floatRight{
-    float: right;
-}
-
-.floatleft{
-    float: left;
-}
-
-#favoriteSpot{
-    width: 20%;
-}
-
 
 #directionsMap{
     width: 280px;
@@ -305,377 +71,59 @@ menu, nav, section { display: block; }
     margin-top: 1.65%;
 }
 
-#panel{
+#directionsPanel{
     width: 300px;
     float: right;
 }
 
-/*#drivingDirections a{*/
-    /*text-decoration: none;*/
-/*}*/
-
-
-
-#filterImg{
-	padding: 6px;
-}
-
-#map {
-    height: 100%;
-    width: 100%;
-}
-
-header {
-	width: 100%;
-    display: block;
-    height: 139px;
-}
-
-#userPic{
- float: left;
-}
-
-#appLogo{
-    float: left;
-}
-
-header a{
-    display: block;
-}
-
-#editFavouriteSpot{
-    font-size: 2em;
-    float: right;
-}
-
-/*#spotName{*/
-    /*margin-right: 7%;*/
-    /*display: inline;*/
-    /*float: right;*/
-/*}*/
-
-#spotLocation{
-    margin-right: 3%;
-    display: inline;
-}
-
-/*.hamburgerCl{
-    position: relative;
-    cursor: pointer;
-    top:30%;
-}*/
-
-/*.hamburgerButton{
-    font-size:4em;
-}*/
-
-.textAlignedRight a{
-    text-align: right;
-    border-bottom:  black solid 1px;
-    font-size: 35px;
-}
-
-.dropdown-menu > li > a:hover{
-    background: #a8c6fa;
-    
-}
-
-/*#drivingDirections{*/
-    /*float: right;*/
-    /*width: 100%;*/
-    /*direction: rtl;*/
-    /*height: 89px;*/
-    /*border-bottom:  black solid 1px;*/
-/*}*/
-
-#hamburgerNav{
-    background: #d6d6d6;
-    width: 379px;
-    height: 301px;
-    border-bottom:  black solid 1px;
-}
-
-.cont {
-    width: 100%;
-    text-align: center;
+#drivingInstrucionsPanel {
+    width: 68%;
     margin: 0 auto;
-    overflow: hidden;
-    border-bottom:  black solid 1px;
 }
 
-div.title { font-size: 2em; }
+.clear{
+    clear: both;
+}
+/*============EndLinkToDrivingDirections===========*/
 
-h1 span {
-    font-weight: 300;
-    color: #Fd4;
-}
-
-div.stars {
-    width: 300px;
-    display: inline-block;
-}
-
-label.star {
-    float: right;
-    padding: 10px;
-    font-size: 36px;
-    color: #444;
-    transition: all .2s;
-}
-
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
-
-label.star.st1:before {
-    content: '\f005';
-    font-family: FontAwesome;
-    color: #d4e3fc;
-}
-
-label.star.st2:before {
-    content: '\f005';
-    font-family: FontAwesome;
-    color: #1464f6;
-}
-.updateindex{
-    height:120px;
-    width:100%;
-    direction:rtl;
-    margin-top:10px;
-}
-
-.postImage{
-    width: 100%;
-}
-
-/*
-	--------------------------New spot-------------------------------
-*/
-#footer1{
-    display: block;
-    height: 50px;
-    width:100%;
-    background:rgb(117, 169, 249);
-    position: relative; bottom:0px;
-}
-#purptxt{
-    text-align:center;
-    color: #460E56;
-    margin:0px;
-}
-#addspot{
-    text-align:center;
-    color: #460E56;
-    margin:0px;
-}
-/*
-	--------------------------spot info-------------------------------
-*/
-
-#info{
-    direction:rtl;
+/*====================WaterInfo====================*/
+#waterInfo {
     padding:20px;
-}
-#spotname{
-    display:inline;
-    color: #460E56;
-    float: right;
-}
-.txtinfo{
-    display:inline;
-    float: right;
-    position: relative;
-    top: 7px;
-}
-
-#region{
-    margin-right: 10px;
-}
-
-#city{
-    margin-right: 10px;
-}
-
-#details{
-    margin:0px;
     direction:rtl;
-    font-size:200%;
-}
-#dataheader{
-    margin-top:7px;
-    padding:5px;
-    display: block;
-    height: 50px;
-    width:100%;
-    background:rgb(170,170,170);
-    position: relative; bottom:0px;
-    padding-right:10px;
-}
-.rating {
     height:80px;
     width:100%;
-    border-bottom: black solid 1px;
+    text-align: center;
+    border-bottom: black dashed 3px;
 }
 
-#carpic{
-    height:45px;
-    width:74px;
-    display:inline;
-}
-#driveinst{
-    display:inline;
-    color: #460E56;
-    font-size:200%;
-    margin-right:15px;
-}
-
-.dataPic {
-    margin-right:15px;
-    height:45px;
-    width:74px;
-    display:inline;
-}
 .dataTxt {
     display:inline;
     margin-right:15px;
 }
 
-#datadetails{
-    height:280px;
-    width:100%;
-    background:rgb(214,214,214);
+.paddedWaterInfo{
+    padding-left: 20%;
 }
-#datablock{
-    height:280px;
-    width:57%;
-    float: left;
-    padding:30px;
-    direction:rtl;
-}
-#datablock2{
-    height:280px;
-    width:43%;
-    float: left;
-    padding:30px;
-    direction:rtl;
-}
-.datahead{
-    padding-right:40px;
-    font-size:130%;
-    margin:0px;
-    border-right: rgb(170,170,170) solid 2px;
-}
-.datainfo{
-    padding-right:40px;
-    font-size:200%;
-    margin:0px;
-    margin-top:-10px;
-    border-right: rgb(170,170,170) solid 2px;
-}
-.datahead2{
-    font-size:130%;
-    margin:0px;
-}
-.datainfo2{
-    font-size:200%;
-    margin:0px;
-    margin-top:-10px;
-}
-.update{
-    border-top: black dashed 3px;
-    height:120px;
-    width:100%;
-    direction:rtl;
-    margin-top:10px;
-}
-.updatedata{
-    margin-top:30px;
-    display:block;
-    float:left;
-    height:60%;
-    width:70%;
-}
-.updatename{
-    color: #460E56;
-    margin:0px;
-}
-.updatetime{
-    font-size: 140%;
+/*==================EndWaterInfo===================*/
+
+/*====================Posts====================*/
+#posts > article{
+    text-align: right;
 }
 
-.updatelogo{
-    display:block;
-    float:right;
-    height:60%;
-    width:30%;
-}
-.userinfo{
-    display:block;
-    width:100%;
-}
-.userpost{
-    direction:rtl;
-    font-size:160%;
-}
-.surfConditionDetails{
-    padding:5px;
-    height:50px;
-    width:100%;
-    background:rgb(235,235,235);
-}
-.surfcon{
-    float:right;
-    display:inline;
-    margin-right:4px;
-    font-size:150%;
-    direction:rtl;
-    color: #460E56;
-    margin:0px;
-}
-.userupdate{
-    height:120px;
-    width:100%;
-    background:rgb(150,150,150);
-}
-.updatepar{
-    padding-top:35px;
-    padding-right:20px;
-    direction:rtl;
-    width:31%;
-    float:left
-}
-.updatepar2{
-    padding-top:35px;
-    direction:rtl;
-    width:38%;
-    float:left
-}
-.datainfo3{
-    display:inline;
-    font-size:200%;
-    margin:0px;
-    margin-top:-10px;
+#posts > article > img{
+    float: right;
 }
 
-/*
-	------------------------------spots-------------------------------
-*/
+.postImage{
+    width: 100%;
+}
+/*==================EndPosts===================*/
 
-#myHeader{
-    position: relative;
-}
-#headerSpan{
-    position: relative;
-    top: 17%;
-    margin-left: 11%;
-    font-size: 70px;
-    font-family: "Edwardian Script ITC";
-}
-#txtSrc{
-    text-align: center;
-    position: relative;
-    top: 4px;
-    -webkit-border-radius: 20px;
-}
+/*=======================EndIndexPage==========================*/
+
+/*=========================SpotsPage===========================*/
+/*===================Filter====================*/
 .spotsNav{
     width: 100%;
     height: 32px;
@@ -685,36 +133,19 @@ label.star.st2:before {
     margin: 0;
     text-align: center;
 }
-#shutFilter{
-    width: 100%;
-    height: 49px;
-    background:#D6D6D6;
-    position: relative;
+
+#rangeInput{
+    margin: 0 auto;
 }
-#filterBtn{
-    position: relative;
-    float: right;
-    margin-right: 15px;
-    margin-top: 5px;
+
+#distRangeInput{
+    margin: 0 auto;
 }
-#loveBtn{
-    position: relative;
-    float: left;
-    margin-left: 11px;
-    margin-top: 2px;
+
+#filterImg{
+    padding: 6px;
 }
-#settingBtn{
-    position: relative;
-    float: right;
-    margin-right: 15px;
-    margin-top: 5px;
-}
-#navigateBtn{
-    position: relative;
-    float: left;
-    margin-left: 13px;
-    margin-top: 6px;
-}
+
 .filter{
     float: right;
 }
@@ -734,17 +165,6 @@ label.star.st2:before {
     background: #EBEBEB;
 }
 
-.break > input{ /* HIDE RADIO */
-    visibility: hidden; /* Makes input not-clickable */
-    position: absolute; /* Remove input from document flow */
-}
-label > input + img{ /* IMAGE STYLES */
-    cursor:pointer;
-    border:2px solid transparent;
-}
-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-    border:2px solid #f00;
-}
 .radioBtnsCont{
     margin-top: 20px;
 }
@@ -758,26 +178,45 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
     float: right;
     cursor: pointer;
 }
-.imgBackgroung{
+
+.breakDirectionImgBackgroung {
     background-color: #690DFF;
     height: 90px;
     width: 108px;
     margin: 0 auto;
 }
-#testDiv{
-    width: 339px;
-    height: 300px;
-    background-color: red;
+
+
+/*==================EndFilter==================*/
+
+/*==============SearchForSpotByName============*/
+#txtSrc{
+    text-align: center;
+    position: relative;
+    top: 4px;
+    -webkit-border-radius: 20px;
+}
+/*============EndSearchForSpotByName===========*/
+#loveBtn{
+    float: left;
+    margin-left: 11px;
+    margin-top: 2px;
 }
 
-#rangeInput{
-    margin: 0 auto;
+#settingBtn{
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+#navigateBtn{
+    position: relative;
+    float: left;
+    margin-left: 13px;
+    margin-top: 6px;
 }
 
-#distRangeInput{
-    margin: 0 auto;
-}
-/*========================range desgin===========================*/
+/*==================RangeDesign===============*/
 input[type=range] {
     -webkit-appearance: none;
     margin: 10px 0;
@@ -866,4 +305,43 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
     background: #690DFF;
 }
-/*===============================================================*/
+/*===============EndRangeDesign===============*/
+
+/*====================Footer==================*/
+#shutFilter {
+    width: 100%;
+    height: 49px;
+    background: #D6D6D6;
+    position: relative;
+}
+/*==================EndFooter=================*/
+/*========================EndSpotsPage=========================*/
+
+
+
+
+
+/*=======================MobileDesgin=====================*/
+@media (max-width:600px){
+    #wrapper{
+        width: 100%;
+    }
+/*========================IndexPage============================*/
+    /*====================WaterInfo====================*/
+
+    .paddedWaterInfo{
+        padding-left: 10%;
+    }
+    /*==================EndWaterInfo===================*/
+}
+/*=======================EndIndexPage==========================*/
+
+
+/*=========================SpotsPage===========================*/
+    /*====================WaterInfo====================*/
+
+
+    /*==================EndWaterInfo===================*/
+
+/*========================EndSpotsPage=========================*/
+/*=======================EndMobileDesgin=====================*/

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="includes/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="includes/css/HeaderStyle.css"/>
+    <link rel="stylesheet" href="includes/css/newSpot.css"/>
+    <link rel="stylesheet" href="includes/css/navMenu.css"/>
+    <link rel="stylesheet" href="includes/css/rankingStars.css"/>
     <link rel="stylesheet" href="includes/css/mySpotGoogleMapStyle.css"/>
     <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Noto+Sans:700"/>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -14,122 +18,163 @@
 </head>
 <body>
 <div id="wrapper">
-    <!--<header>
-        <a href="#" id="userPic">
-           <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#">
-            <img src="includes/img/logo2.jpg" id="appLogo">
-        </a>
-        
-        <div class="dropdown hamburgerCl">
-            <img src="includes/img/hamburger.jpg" type="button" data-toggle="dropdown"/>
-            <ul id="hamburgerNav" class="dropdown-menu pull-right">
-                <li class="textAlignedRight"><a href="#">דף הבית</a></li>
-                <li class="textAlignedRight"><a href="spots.html">ספוטים</a></li>
-                <li class="textAlignedRight"><a href="newspot.html">הוסף ספוט</a></li>
-                <li class="textAlignedRight"><a href="#">התראות</a></li>
-                <li class="textAlignedRight"><a href="#">עדכון תנאי גלישה</a></li>
-            </ul>
-        </div>
-        <nav id="navbar">
-  			<ul>
-    			<li><a class="active" href="#"></a></li>
-    			<li><a href="spots.html">ספוטים</a></li>
-    			<li><a href="newspot.html">הוסף ספוט</a></li>
-    			<li><a href="#">התראות</a></li>
-    			<li><a href="#">עדכון תנאי גלישה</a></li>
-  			</ul>
-		</nav>
-    </header>-->
-	<header id="glbHeader">
-        <a href="#" id="userPic">
-            <img src="includes/img/logo.jpg">
-        </a>
-        <a href="#" id="logo">
-        </a>
-        <img src="includes/img/hamburger.jpg" id="hamburderButton" onclick="showHam()"/>
+    <header id="glbHeader">
+        <a href="#" id="userPic"></a>
+        <a href="#" id="logo"></a>
+        <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
             <li><a href="#">התראות</a></li>
             <li><a href="#">עדכון תנאי גלישה</a></li>
-            <li><a href="addspot.html" class="selected" >הוסף ספוט</a></li>
+            <li><a href="#" class="selected">הוסף ספוט</a></li>
             <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="index.html" >דף הבית</a></li>
         </ul>
     </nav>
-    <section dir="rtl">
-        <h2><b>פרטי הספוט</b></h2>
+
+    <section id="spotDetails">
+        <h2>פרטי הספוט</h2>
     </section>
-    <br>
-    <form class="addform">
-    	<label class="inputlbl">
-    		<p class="inputtxt">שם החוף</p>
-    		<input type="text" name="SpotName" value="שם החוף" >
-    	</label>
-    	<br>
-    	<label class="inputlbl">
-    		<p class="inputtxt">תמונה</p>
-    		<section class="upload">
-    			<input type="file" name="upload" >
-    			<img src="includes/img/imgicon.png">
-    		</section>
-    	</label>
-    	<br>
-    	<label class="inputlbl">
-    		<p class="inputtxt">דירוג</p>
-    		<div class="cont">
-        		<div class="stars">
-                	<label class="star st1" onclick="changeStars(1)"></label>
-                	<label class="star st1" onclick="changeStars(2)"></label>
-                	<label class="star st1" onclick="changeStars(3)"></label>
-                	<label class="star st1" onclick="changeStars(4)"></label>
-                	<label class="star st1" onclick="changeStars(5)"></label>
-        		</div>
-    		</div>
-    	</label>
-    	<br>
-    	<label class="inputlbl">
-    		<p class="inputtxt">רמה מומלצת</p>
-    		<label class="surflvl"><input type="radio" name="SpotName" value="מתחילים" class="surflvlr"></label><p>מתחילים</p>
-    		<label class="surflvl"><input type="radio" name="SpotName" value="מתקדמים" class="surflvlr"></label><p>מתקדמים</p>
-    		<label class="surflvl"><input type="radio" name="SpotName" value="מקצוענים" class="surflvlr"></label><p>מקצוענים</p>
-    	</label>
-    	<label class="pages">
-    		<label class="surflvl"><input type="radio" name="SpotName" class="surflvlr"></label>
-    		<label class="surflvl"><input type="radio" name="SpotName"  class="surflvlr"></label>
-    		<label class="surflvl"><input type="radio" name="SpotName"  class="surflvlr"></label>
-    	</label>
+    <form action="includes/php/insertDataToDB.php" method="post" onsubmit="return validateForm(this)">
+
+        <div class="col-2">
+            <label>
+                שם החוף
+                <input  type="text" placeholder="אנא הקש שם חוף" id="name" name="bitchName" value="" tabindex="1" required>
+            </label>
+        </div>
+
+        <div class="col-2">
+            <label>
+עיר
+                <input  type="text" placeholder="אנא הקש שם עיר" id="name" name="cityName" value="" tabindex="1" required>
+            </label>
+        </div>
+
+        <div class="col-2">
+            <label>
+מרכז
+                <input  type="text" placeholder="אנא הקש שם עיר" id="name" name="cityName" value="" tabindex="1" required>
+            </label>
+        </div>
+
+        <div class="col-2" id="imgUpload">
+            <label>
+                תמונה
+                <input  type="file"  id="password" name="pass" value="" tabindex="2">
+            </label>
+        </div>
+        <div class="col-2" id="dirug">
+            <label>
+                דירוג
+                <!-- <input type="email" placeholder="What is your e-mail address?" id="email" name="mail" value="" tabindex="3"> -->
+                <div class="cont">
+                    <div class="stars">
+                        <label class="star st1" onclick="changeStars(1)"></label>
+                        <label class="star st1" onclick="changeStars(2)"></label>
+                        <label class="star st1" onclick="changeStars(3)"></label>
+                        <label class="star st1" onclick="changeStars(4)"></label>
+                        <label class="star st1" onclick="changeStars(5)"></label>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div class="col-2" id="age">
+            <label>
+                רמה מומלצת
+                <select name="surfingLevel" tabindex="10">
+                    <option value="מתחילים" selected>מתחילים</option>
+                    <option value="מתקדמים" >מתקדמים</option>
+                    <option value="מקצוענים">מקצוענים</option>
+                </select>
+            </label>
+        </div>
+
+
+
+        <div class="col-2">
+            <label>
+                כיוון שבירה
+                <select name="waveDirection" tabindex="11">
+                    <option value="" selected></option>
+                    <option value="ימין">ימין</option>
+                    <option value="שמאל" >שמאל</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="col-2">
+            <label>
+                סוג שבירה
+                <select name="waveBrakeType" tabindex="11">
+                    <option value="שבירה" selected>שבירת ריף</option>
+                    <option value="ריף">ריף</option>
+                    <option value="פוינט" >פוינט</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-2">
+            <label>
+                סוג תחתית
+                <select name="bottomType" tabindex="11">
+                    <option value="חול" selected>חול</option>
+                    <option value="סלעית">סלעית</option>
+                    <option value="שונית" >שונית</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="col-2" id="optimalWind">
+            <label>
+רוח מיטבית
+                <input  type="text" placeholder="רוח מיטבית" id="name" name="םoptimalWind" value="" tabindex="4" required>
+            </label>
+        </div>
+
+        <div class="col-2" id="waterWind">
+            <label>
+טמפרטורת מים
+                <input  type="" id="waterTemp" name="waterTemp" value="" tabindex="4" required>
+            </label>
+        </div>
+
+        <div class="col-2" id="temp">
+            <label>
+                גובה גל ממוצע
+                <input type="number"  type="range" id="waveHeight" name="waveHeight" value="" tabindex="7">
+            </label>
+        </div>
+        <div class="col-2">
+            <label>
+                כמות גולשים
+                <select name="animals" tabindex="10">
+                    <option value="Fish" selected></option>
+                    <option value="Cat">ריק</option>
+                    <option value="Dog" >בודדים</option>
+                    <option value="Dog" >המוני</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="col-2">
+            <label>
+                עונה מומלצת
+                <select name="season" tabindex="11">
+                    <option value="כל השנה" selected>כל השנה</option>
+                    <option value="קיץ" >קיץ</option>
+                    <option value="חורף">חורף</option>
+                    <option value="סתיו" >סתיו</option>
+                    <option value="אביב" >אביב</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="col-submit">
+            <button class="submitbtn">הוסף</button>
+        </div>
+
     </form>
-    <script>
-        var sql = "select u.username, p.* from posts_74 p join users_74 u on p.user_id = u.id";
-        var posts = [];
-        $.ajax({
-            url: 'includes/php/getDataFromDB.php',
-            type: 'GET',
-            data: {sql:sql},
-            success: function(data) {
-                posts = JSON.parse(data);
-                posts.forEach(function(spot) {
-                    $('#posts').append("<article>" +
-                            "<img src='includes/img/logo.jpg' alt='user'>" +
-                            "<section>" +
-                            "<br>" +
-                            "<h2>" + spot.username + "</h2>" +
-                            "<p class='updatetime'>"+ "עדכן תנאי גלישה לפני 13 דקות" +"</p>" +
-                            "</section>" +
-                            "<br>" +
-                            "<h2>" + spot.msg + "</h2>" +
-                            "<img class='postImage' src='includes/img/" + spot.img_name + ".png'>" +
-                            "</article>")
-                })
-            }
-        });
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=initMap">
-    </script>
 </div>
 </body>
 </html>

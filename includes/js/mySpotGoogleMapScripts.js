@@ -389,6 +389,10 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
     return str1 + str2 + str3;
 };
 
+var insertNewSpotToDB = function(){
+
+};
+
 $(document).ready(function() {
     $('#getDrvDirections > a').click(openDirectionsModal);
     $('#hamburgerButton').click(showHam);

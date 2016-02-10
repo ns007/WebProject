@@ -382,13 +382,17 @@ menu, nav, section { display: block; }
     color: #460E56;
     margin:0px;
 }
+
 #addSpotButton{
-    text-align:center;
+    border: none;
+    width: 105px;
+    background: transparent;
+    font-size: 35px;
     color: #460E56;
-    margin:0px;
 }
 
 #addNewSpotfooter{
+    text-align:center;
     display: block;
     height: 50px;
     width:100%;
@@ -409,6 +413,10 @@ menu, nav, section { display: block; }
 
     .paddedWaterInfo{
         padding-left: 10%;
+    }
+
+    #favoriteSpot{
+        width: 40%;
     }
     /*==================EndWaterInfo===================*/
 }

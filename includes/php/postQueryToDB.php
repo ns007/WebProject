@@ -4,6 +4,7 @@
     $dbpass = "auxstud5DB1!";
     $dbname = "auxstudDB5";
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    mysqli_set_charset($connection, "utf8");
 
     $sql = $_POST['sql'];
 

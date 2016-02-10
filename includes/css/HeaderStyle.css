@@ -11,20 +11,33 @@ header{
     height: 139px;
     text-align: center;
 }
-	
+
+#logos-container{
+	float:left;
+	width:65%;
+	min-width:405px;
+}
+
 #userPic{
 	background: url('../img/logo.jpg');
 	display: block;
-    width: 139px;
-    height: 124px;
-    float: left;
+	width: 13%;
+	min-width:100px;
+	height: 139px;
+	float: left;
+	background-size:100%;
+	background-repeat:no-repeat;
 }
 #logo{
 	background: url('../img/AppLogo.jpg') no-repeat;
-	display: inline-block;
-    width: 304px;
-    height: 139px;
-    margin: 0 auto;
+	display:block;
+	width: 40%;
+	min-width:304px;
+	max-width:500px;
+	height: 139px;
+	float:right;
+	background-size:100%;
+	background-repeat:no-repeat;
 }
 #hamburgerButton{
 		display: none;

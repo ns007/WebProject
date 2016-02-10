@@ -1,16 +1,18 @@
 /***********nav Menu************/
 #navMenu > ul{
-
+    width:100%;
     list-style-type:none;
-    margin:0;
+    margin: 0 auto;
     padding:0;
 }
 #navMenu li{
 
     display:inline-block;
     float: left;
-   	min-width:20%;
+    width:20%;
+    min-width:35px;
 }
+
 
 #navMenu li:not(.firstNavLink){
     border-right: 1px solid #ffffff;

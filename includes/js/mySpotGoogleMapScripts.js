@@ -7,6 +7,7 @@ self.markers = [];
 self.spots = [];
 var chosenSpot = {};
 var hamIsShown = false;
+var starRank = 0;
 var greyMarkerIconImage = 'includes/img/grey.png';
 
 var showHam = function(){
@@ -391,6 +392,16 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
 
 var insertNewSpotToDB = function(){
 
+    var sql = "INSERT INTO 74_spot (`name`, latitude, longitude,rank,surfing_level,wave_direction,wave_break_type," +
+        "bottom_type,wave_height,season,city,distance_from_me,optimal_wind,region,tempreture,wave_timing,favourite) VALUES (" +
+        "'" + $('#sptName').val() + "'," + 32.3329050 + "," + 34.8216140 + "," + 2 +
+        ",'" + $('#surfingLevel').val() + "','" + $('#waveDirection').val() + "','" + $('#waveBrakeType').val() +
+        "','" + $('#bottomType').val() + "'," + $('#waveHeight').val() + ",'" + $('#season').val() + "','" +
+        $('#sptCity').val() + "'," + 11 + ",'" + $('#sptOptimalWind').val() + "','" + $('#sptRegion').val() +
+        "'," + $('#waterTemp').val() + "," + 23 + "," + 0 + ")";
+
+    console.log(sql);
+    postQueryToDB(sql);
 };
 
 $(document).ready(function() {
@@ -401,5 +412,5 @@ $(document).ready(function() {
     $( ".star.st1" ).each(function( index ) {
         $( this ).click({num: index+1, updatedNeeded: true},changeRankStars);
     });
-
+    $('#submitBtn').click(insertNewSpotToDB);
 });

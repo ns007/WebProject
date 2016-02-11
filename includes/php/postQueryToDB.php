@@ -7,12 +7,12 @@
     mysqli_set_charset($connection, "utf8");
 
     $sql = $_POST['sql'];
-
-    if ($connection->query($sql) === TRUE) {
+    if ($connection->query(stripslashes($sql)) === TRUE) {
         echo "OK";
     } else {
-        echo "Error";
+        echo $connection->error;
     }
 
+    $connection->commit();
     $connection->close();
 ?>

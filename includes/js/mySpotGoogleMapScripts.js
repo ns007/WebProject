@@ -400,6 +400,7 @@ var insertNewSpotToDB = function(){
         "','" + $('#bottomType').val() + "'," + $('#waveHeight').val() + ",'" + $('#season').val() + "','" +
         $('#sptCity').val() + "'," + 11 + ",'" + $('#sptOptimalWind').val() + "','" + $('#sptRegion').val() +
         "'," + $('#waterTemp').val() + "," + 23 + "," + 0 + ")";
+
     postQueryToDB(sql).done(function(){
         getDataFromDB("select max(id) as id from 74_spot").done(function (data) {
             var spotId = JSON.parse(data)[0].id;

@@ -24,6 +24,5 @@ function addSpot() {
 };
 
 var adding = function () {
-    alert("lat: " + lat + " , lng: " + lng);
-    window.open('newspotform.php', '_self', false);
+    window.open('newspotform.php?lat=' + lat + '&lng=' + lng, '_self', false);
 };

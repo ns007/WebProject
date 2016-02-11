@@ -354,16 +354,16 @@ var updateSpotData = function (spot) {
 };
 
 var changeRankStars = function (event) {
-    var num = event.data.num;
+    starRank = event.data.num;
     var updatedNeeded = event.data.updatedNeeded;
     $('.stars label').removeClass("star st2");
     $('.stars label').addClass("star st1");
-    for (var i = 1; i <= num; i++) {
+    for (var i = 1; i <= starRank; i++) {
         $('.stars label:nth-child(' + i + ')').removeClass("star st1");
         $('.stars label:nth-child(' + i + ')').addClass("star st2");
     }
     if (updatedNeeded) {
-        postQueryToDB("update 74_spot set rank = " + num + " where id = " + (chosenSpot.id));
+        postQueryToDB("update 74_spot set rank = " + starRank + " where id = " + (chosenSpot.id));
     }
 };
 
@@ -392,15 +392,14 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
 
 var insertNewSpotToDB = function(){
 
+    var params = getUrlParams(window.location);
     var sql = "INSERT INTO 74_spot (`name`, latitude, longitude,rank,surfing_level,wave_direction,wave_break_type," +
         "bottom_type,wave_height,season,city,distance_from_me,optimal_wind,region,tempreture,wave_timing,favourite) VALUES (" +
-        "'" + $('#sptName').val() + "'," + 32.3329050 + "," + 34.8216140 + "," + 2 +
+        "'" + $('#sptName').val() + "'," + params.lat + "," + params.lng + "," + starRank +
         ",'" + $('#surfingLevel').val() + "','" + $('#waveDirection').val() + "','" + $('#waveBrakeType').val() +
         "','" + $('#bottomType').val() + "'," + $('#waveHeight').val() + ",'" + $('#season').val() + "','" +
         $('#sptCity').val() + "'," + 11 + ",'" + $('#sptOptimalWind').val() + "','" + $('#sptRegion').val() +
         "'," + $('#waterTemp').val() + "," + 23 + "," + 0 + ")";
-
-    console.log(sql);
     postQueryToDB(sql);
 };
 

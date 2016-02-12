@@ -142,18 +142,28 @@ menu, nav, section { display: block; }
 #posts > article{
     width:100%;
     float:right;
+    border-bottom: solid black 1px;
     text-align: right;
 }
 
-#posts > article > img{
+#posts > article > h2{
+    width: 50%;
+    float: right;
+}
+
+#posts > article > h4{
+    width: 50%;
+    float: right;
+}
+
+.postUserPic{
     float: right;
 }
 
 .postImage{
     display:block;
-    width: 70%;
-    padding:5%;
-    margin-right:15%;
+    width:23%;
+    padding:1.5%;
 }
 /*==================EndPosts===================*/
 
@@ -522,6 +532,9 @@ menu, nav, section { display: block; }
         margin:4px;
         color:#351ECC;
     }
+    .postImage{
+        float:none;
+    }
 }
 /*=======================EndDeskTopPage========================*/
 
@@ -641,9 +654,9 @@ menu, nav, section { display: block; }
     }
     .postImage{
         display:block;
-        width: 80%;
-        padding:9%;
-        margin-right:10%;
+        width: 70%;
+        margin-left:15%;
+        border:dotted #999999 1px;
     }
 
     /*==================EndWaterInfo===================*/

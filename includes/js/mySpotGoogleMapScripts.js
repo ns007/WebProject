@@ -225,7 +225,7 @@ var indexPagePostsImplementor = function () {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
             var img = typeof(post.img_name) != "undefined" && post.img_name != "" ? "<img class='postImage' src='includes/img/" + post.img_name + ".png'>" : "";
             $('#posts').append("<article>" +
-                "<img src='includes/img/logo.jpg' alt='user'>" +
+                "<img src='includes/img/logo.jpg' class='postUserPic' alt='user'>" +
                 "<br>" +
                 "<h2>" + post.username + "</h2>" +
                 "<h4>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</h4>" +

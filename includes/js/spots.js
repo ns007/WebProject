@@ -9,15 +9,7 @@ var distValues = {
     	"21":"21KM","22": "212KM","23": "23KM","24": "24KM","25":"25KM","26":"26KM","27":"27KM","28": "28KM","29": "29KM","30": "30KM"
 };
 
-var filter = {
-    waveHeight: true,
-    distance: true,
-    breakType: true,
-    breakDir: true,
-    level: true,
-    name: true
-};
-
+var filter = {};
 var isFiltered = function(marker){
     if(((parseInt(spots[marker.spotId].distance_from_me) >= parseInt($('#distRangeInput').val())) || filter.distance)
     && ((parseFloat(spots[marker.spotId].wave_height) >= parseFloat($('#rangeInput').val())) || filter.waveHeight)
@@ -27,14 +19,27 @@ var isFiltered = function(marker){
     && ((spots[marker.spotId].name == $("#txtSrc").val().replace("חוף ", "")) || filter.name))
         return true;
     return false;
-}
+};
+
+var wave_direction = {dir:"ימין"};
+var resetFilter = function(){
+    filter = { waveHeight: true, distance: true, breakType: true, breakDir: true, level: true, name: true };
+    setRelevantMarkers();
+    $('#rangeInput').val('10');
+    $('#rangeText').text("10M");
+    $('#distRangeInput').val('16');
+    $('#distText').text("16KM");
+    $('input[type=radio]').attr('checked',false);
+    $('#break1Img').removeClass("breakDirectionImgBackgroung");
+    $('#break2Img').removeClass("breakDirectionImgBackgroung");
+    wave_direction = {dir:"ימין"};
+};
 
 var setRelevantMarkers = function(){
     for(var i = 0; i < self.markers.length; i++)
         self.markers[i].setVisible(isFiltered(self.markers[i]));
 }
 
-var wave_direction = {dir:"ימין"};
 $(function () {
 
     $('#rangeText').text(rangeValues[$('#rangeInput').val()]);

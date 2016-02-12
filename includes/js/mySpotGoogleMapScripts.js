@@ -37,6 +37,7 @@ var getDataFromDB = function (sql) {
     return $.ajax({
         url: 'includes/php/getDataFromDB.php',
         type: 'GET',
+        cache: false,
         data: {sql: sql}
     });
 };
@@ -45,6 +46,7 @@ var postQueryToDB = function (sql) {
     return $.ajax({
         url: 'includes/php/postQueryToDB.php',
         type: 'POST',
+        cache: false,
         data: {sql: sql}
     });
 };
@@ -134,6 +136,7 @@ var getDataToIndexPage = function () {
 
 var getDataToSpotsPage = function () {
     var availableTags = [];
+    resetFilter();
     $.ajax({
         url: assignSpotsToGoogleMapsMarkers()
     }).done(function () {
@@ -398,7 +401,7 @@ var insertNewSpotToDB = function(){
         "bottom_type,wave_height,season,city,distance_from_me,optimal_wind,region,tempreture,wave_timing,favourite) VALUES (" +
         "'" + $('#sptName').val() + "'," + params.lat + "," + params.lng + "," + starRank +
         ",'" + $('#surfingLevel').val() + "','" + $('#waveDirection').val() + "','" + $('#waveBrakeType').val() +
-        "','" + $('#bottomType').val() + "'," + $('#waveHeight').val() + ",'" + $('#season').val() + "','" +
+        "','" + $('#bottomType').val() + "'," + $('#wavesHeight').val() + ",'" + $('#season').val() + "','" +
         $('#sptCity').val() + "'," + 11 + ",'" + $('#sptOptimalWind').val() + "','" + $('#sptRegion').val() +
         "'," + $('#waterTemp').val() + "," + 23 + "," + 0 + ")";
 
@@ -419,4 +422,5 @@ $(document).ready(function() {
         $( this ).click({num: index+1, updatedNeeded: true},changeRankStars);
     });
     $('#submitBtn').click(insertNewSpotToDB);
+    $('#resetFilter').click(resetFilter);
 });

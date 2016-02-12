@@ -12,10 +12,12 @@ menu, nav, section { display: block; }
 
 /*=========================AllPages============================*/
 
+
 #map {
-    height: 443px;
+    height: 498px;
     width: 100%;
 }
+
 
 .clear{
     clear: both;
@@ -42,7 +44,6 @@ menu, nav, section { display: block; }
 
 /*====================WaterInfo====================*/
 #waterInfo {
-    padding:20px;
     direction:rtl;
     height:80px;
     width:100%;
@@ -52,11 +53,22 @@ menu, nav, section { display: block; }
 
 .dataTxt {
     display:inline;
-    margin-right:15px;
 }
 
 .paddedWaterInfo{
-    padding-left: 20%;
+    padding-left: 5%;
+}
+#waterInfo h3 {
+    font-size:150%;
+}
+#waveHeight{
+    margin-left:0%;
+}
+#waveTiming{
+    margin-left:0%;
+}
+#waveTemp{
+
 }
 /*==================EndWaterInfo===================*/
 
@@ -75,9 +87,10 @@ menu, nav, section { display: block; }
 
 /*==============LinkToDrivingDirections=============*/
 #getDrvDirections{
+    display:block;
     padding:20px;
     direction:rtl;
-    height:80px;
+    height:160px;
     width:100%;
     border-bottom: black solid 1px;
 }
@@ -117,7 +130,18 @@ menu, nav, section { display: block; }
 /*============EndLinkToDrivingDirections===========*/
 
 /*====================Posts====================*/
+
+/*
+.userPosts{
+	display:block;
+	border-bottom:#000000 solid 1px;
+	height:10px;
+	width:100%;
+}*/
+
 #posts > article{
+    width:100%;
+    float:right;
     text-align: right;
 }
 
@@ -126,7 +150,10 @@ menu, nav, section { display: block; }
 }
 
 .postImage{
-    width: 100%;
+    display:block;
+    width: 70%;
+    padding:5%;
+    margin-right:15%;
 }
 /*==================EndPosts===================*/
 
@@ -263,7 +290,10 @@ menu, nav, section { display: block; }
 
 /*==============ExtendedSpotDetails============*/
 #extendedSpotDetails{
+    display:block;
+    float:right;
     direction:rtl;
+    width:100%;
 }
 
 #extendedSpotDetailsHeader {
@@ -401,33 +431,215 @@ menu, nav, section { display: block; }
 }
 /*===================EndTitle==================*/
 /*=======================EndNewpotsPage========================*/
+/*=======================StartDeskTopPage========================*/
+@media (min-width:600.5px){
+    #map-container {
+        display:block;
+        height: 498px;
+        width: 73%;
+        float:right;
+    }
+    #getDrvDirections{
+        display:block;
+        padding:2px;
+        margin-right:2%;
+        direction:rtl;
+        height:100%;
+        width:25%;
+        border: black solid 1px;
+    }
+    #getDrvDirections img{
+        margin:2%;
+        width:95%;
+    }
+    #getDrvDirections a{
+        width:100%;
+        display:inline;
+        color: #351ECC;
+        font-size:200%;
+        margin-right:15px;
+    }
 
+    #getDrvDirections > a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #getDrvDirections{
+        text-align: center;
+    }
+
+    #directionsMap{
+        width: 280px;
+        height: 400px;
+        float: left;
+        margin-top: 1.65%;
+    }
+
+    #directionsPanel{
+        width: 300px;
+        float: right;
+    }
+
+    #drivingInstrucionsPanel {
+        width: 68%;
+        margin: 0 auto;
+    }
+    #waterInfo{
+        margin-top:5px;
+        display:block;
+        padding:4px;
+        margin-right:2%;
+        direction:rtl;
+        height:100%;
+        width:25%;
+        border: black solid 1px;
+    }
+    #waveHeight{
+        padding:2px;
+        display:block;
+        margin:4px;
+        border-bottom:#000000 solid 1px;
+        color:#351ECC;
+    }
+    #waveTiming{
+        padding:2px;
+        display:block;
+        margin:4px;
+        border-bottom:#000000 solid 1px;
+        color:#351ECC;
+    }
+    #waveTemp{
+        padding:2px;
+        display:block;
+        margin:4px;
+        color:#351ECC;
+    }
+}
+/*=======================EndDeskTopPage========================*/
 
 /*=======================MobileDesgin=====================*/
 @media (max-width:600px){
+    #map-container {
+        display:block;
+        height: 444px;
+        width: 100%;
+    }
     #wrapper{
         width: 100%;
     }
-/*========================IndexPage============================*/
-    /*====================WaterInfo====================*/
+    #getDrvDirections{
+        display:block;
+        padding:20px;
+        direction:rtl;
+        height:160px;
+        width:100%;
+        border-bottom: black solid 1px;
+    }
+
+    #getDrvDirections > a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #getDrvDirections{
+        text-align: center;
+    }
+
+    #getDrvDirections > a{
+        display:inline;
+        color: #460E56;
+        font-size:200%;
+        margin-right:15px;
+    }
+
+    #directionsMap{
+        width: 280px;
+        height: 400px;
+        float: left;
+        margin-top: 1.65%;
+    }
+
+    #directionsPanel{
+        width: 300px;
+        float: right;
+    }
+
+    #drivingInstrucionsPanel {
+        width: 68%;
+        margin: 0 auto;
+    }
+    #waterInfo {
+        padding:2%;
+
+    }
+    #waterInfo h3 {
+        font-size:100%;
+    }
 
     .paddedWaterInfo{
-        padding-left: 10%;
+        padding-left: 0%;
     }
+    #waveHeight{
+        margin:2px;
+    }
+    #waveTiming{
+        margin:2px;
+    }
+    #waveTemp{
+        margin:0px;
+    }
+    /*========================IndexPage============================*/
+    /*====================WaterInfo====================*/
 
     #favoriteSpot{
         width: 40%;
     }
     /*==================EndWaterInfo===================*/
-}
-/*=======================EndIndexPage==========================*/
+    /*=======================EndIndexPage==========================*/
 
 
-/*=========================SpotsPage===========================*/
+    /*=========================SpotsPage===========================*/
     /*====================WaterInfo====================*/
+    #waterInfo {
+        padding:0px;
+        padding-top:10px;
+    }
+    #waterInfo h3 {
+        font-size:140%;
+    }
 
+    .paddedWaterInfo{
+        padding-left: 0%;
+    }
+    #waveHeight{
+        margin:2px;
+    }
+    #waveTiming{
+        margin:2px;
+    }
+    #waveTemp{
+        margin:0px;
+    }
+    #map {
+        height: 443px;
+        width: 80%;
+        margin:0 auto;
+    }
+    #posts{
+        float:right;
+    }
+    #posts h4{
+        width:80%;
+    }
+    .postImage{
+        display:block;
+        width: 80%;
+        padding:9%;
+        margin-right:10%;
+    }
 
     /*==================EndWaterInfo===================*/
-
+}
 /*========================EndSpotsPage=========================*/
 /*=======================EndMobileDesgin=====================*/

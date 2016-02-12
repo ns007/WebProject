@@ -95,9 +95,10 @@ var createMarker = function (i) {
 };
 
 var getDataToIndexPage = function () {
-    initMap();
     getDataFromDB("select * from 74_spot").done(function (data) {
+        initMap();
         spots = JSON.parse(data);
+        console.log(spots);
         for (var i = 0; i < spots.length; i++) {
             var marker = createMarker(i);
             self.markers.push(marker);

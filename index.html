@@ -26,11 +26,12 @@
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
-            <li><a href="#">התראות</a></li>
-            <li><a href="#">עדכון תנאי חוף</a></li>
-            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="#"  class="selected">דף הבית</a></li>
             <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="#" class="selected">דף הבית</a></li>
+            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="#">עדכון תנאי חוף</a></li>
+            <li><a href="#">התראות</a></li>
+
         </ul>
     </nav>
     <section dir="rtl">
@@ -43,7 +44,9 @@
         </section>
     </section>
     <br>
-    <div id="map"></div>
+    <section id="map-container">
+        <div id="map"></div>
+    </section>
     <div class="starsContainer">
         <div class="stars">
             <label class="star st1"></label>
@@ -107,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <h3 id="varify"></h3>
     </div>
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnmvaIGMxpoWZoXkIs_JCGoetynTVfCks&callback=mapDataManager">

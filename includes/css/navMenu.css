@@ -8,7 +8,7 @@
 #navMenu li{
 
     display:inline-block;
-    float: left;
+    float: right;
     width:20%;
     min-width:35px;
 }
@@ -29,11 +29,11 @@
 }
 
 #navMenu li:hover a {
-    background: #19c589;
+    background: #351ECC;
 }
 
 #navMenu .selected{
-    background: #19c589;
+    background: #351ECC;
 }
 
 .navMenuState{}
@@ -42,14 +42,16 @@
 
 /*==================MobileDesgin=====================================*/
 @media (max-width:600px){
-	.navMenuState{
-	    display:none;
-	}
-	
-	#navMenu li {
-		min-width: 85.5%;
-		position:relative;
-		left: 5.5%;
-	}
+    .navMenuState{
+        display:none;
+    }
+
+    #navMenu li {
+        width: 100%;
+        /*
+        position:relative;
+                left: 20%;*/
+
+    }
 }
 /*===================EndMobileDesgin===============================*/

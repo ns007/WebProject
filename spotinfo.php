@@ -26,11 +26,12 @@
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
-            <li><a href="#">התראות</a></li>
-            <li><a href="#">עדכון תנאי חוף</a></li>
-            <li><a href="newspot.html">הוסף ספוט</a></li>
-            <li><a href="spots.html">ספוטים</a></li>
             <li class="firstNavLink"><a href="index.html">דף הבית</a></li>
+            <li><a href="spots.html">ספוטים</a></li>
+            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="#">עדכון תנאי חוף</a></li>
+            <li><a href="#">התראות</a></li>
+
         </ul>
     </nav>
     <div class="clear"></div>
@@ -38,8 +39,10 @@
         <h2 id="spotName"></h2>
         <h3><span id="spotCity" class="txtInfo"></span><span id="spotRegion" class="txtInfo"></span></h3>
     </section>
-    <div id="map">
-    </div>
+    <br><br>
+    <section id="map-container">
+        <div id="map"></div>
+    </section>
     <div class="starsContainer">
         <div class="stars">
             <label class="star st1"></label>
@@ -71,10 +74,10 @@
                 <h2 class="spotDataValue" id="optWind"></h2>
                 <h4 class="spotDataKey">רמה ממולצת</h4>
                 <h2 class="spotDataValue" id="level">/p>
-                <h4 class="spotDataKey">עונה</h4>
-                <h2 class="spotDataValue" id="season"></h2>
-                <h4 class="spotDataKey">סוג שבירה</h4>
-                <h2 class="spotDataValue" id="waveBreakType"></h2>
+                    <h4 class="spotDataKey">עונה</h4>
+                    <h2 class="spotDataValue" id="season"></h2>
+                    <h4 class="spotDataKey">סוג שבירה</h4>
+                    <h2 class="spotDataValue" id="waveBreakType"></h2>
             </section>
             <section id="spotDataLeftBlock">
                 <h4 class="spotDataKey">סוג שבירה</h4>

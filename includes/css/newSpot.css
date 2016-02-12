@@ -50,8 +50,9 @@ form {
     direction: rtl;
 }
 form > div > label {
+    /*min-height:90px;*/
     display: block;
-    padding: 20px 20px 10px;
+    padding: 20px 10px 10px;
     vertical-align: top;
     font-size: 13px;
     font-weight: bold;
@@ -162,15 +163,18 @@ button.submitbtn:active {
     height: 78px;
 }
 #waterWind{
-    height: 84px;
+    height: 87px;
+}
+#waterTemp{
+    height: 44px;
 }
 #dirug{
-    height: 95px;
+    height: 88px;
 }
 #temp{
     height: 84px;
 }
-#waveHeight{
+#wavesHeight{
     height: 38px;
 }
 label > span{
@@ -195,6 +199,10 @@ label > span{
     font-size: 250%;
     background: #C0C0C0;
     color: #460E56;
+    width: 99.9%;
+    display:block;
+    float:left;
+    height:50px;
 }
 /** responsive design **/
 @media(min-width: 850px){

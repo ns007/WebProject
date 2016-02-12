@@ -26,11 +26,11 @@
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
-            <li><a href="#">התראות</a></li>
-            <li><a href="#">עדכון תנאי חוף</a></li>
-            <li><a href="#" class="selected">הוסף ספוט</a></li>
+            <li><a href="index.html" class="firstNavLink">דף הבית</a></li>
             <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="index.html" >דף הבית</a></li>
+            <li><a href="newspot.html" class="selected">הוסף ספוט</a></li>
+            <li><a href="#">עדכון תנאי חוף</a></li>
+            <li><a href="#">התראות</a></li>
         </ul>
     </nav>
 
@@ -47,14 +47,14 @@
 
         <div class="col-2">
             <label>
-עיר
+                עיר
                 <input  type="text" placeholder="אנא הקש שם עיר" id="sptCity" name="cityName" value="" tabindex="1" required>
             </label>
         </div>
 
         <div class="col-2">
             <label>
-אזור
+                אזור
                 <input  type="text" placeholder="אנא הקש את אזור החוף" id="sptRegion" name="cityName" value="" tabindex="1" required>
             </label>
         </div>
@@ -124,14 +124,14 @@
 
         <div class="col-2" id="optimalWind">
             <label>
-רוח מיטבית
+                רוח מיטבית
                 <input  type="text" placeholder="רוח מיטבית" id="sptOptimalWind" name="optimalWind" value="" tabindex="4" required>
             </label>
         </div>
 
         <div class="col-2" id="waterWind">
             <label>
-טמפרטורת מים
+                טמפרטורת מים
                 <input  type="number" id="waterTemp" name="waterTemp" value="" tabindex="4" required>
             </label>
         </div>
@@ -139,7 +139,7 @@
         <div class="col-2" id="temp">
             <label>
                 גובה גל ממוצע
-                <input type="number"  type="range" id="waveHeight" name="waveHeight" value="" tabindex="7">
+                <input type="number"  type="range" id="wavesHeight" name="waveHeight" value="" tabindex="7">
             </label>
         </div>
         <div class="col-2">

@@ -32,7 +32,7 @@ var resetFilter = function(){
     $('input[type=radio]').attr('checked',false);
     $('#break1Img').removeClass("breakDirectionImgBackgroung");
     $('#break2Img').removeClass("breakDirectionImgBackgroung");
-    wave_direction = {dir:"ימין"};
+    wave_direction.dir = "ימין";
 };
 
 var setRelevantMarkers = function(){

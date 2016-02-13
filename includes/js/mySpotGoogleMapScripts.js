@@ -35,7 +35,7 @@ function initMap() {
 
 var getDataFromDB = function (sql) {
     return $.ajax({
-        url: 'includes/php/getDataFromDB.php',
+        url: 'includes/handlers/getDataFromDB.php',
         type: 'GET',
         cache: false,
         data: {sql: sql}
@@ -44,12 +44,22 @@ var getDataFromDB = function (sql) {
 
 var postQueryToDB = function (sql) {
     return $.ajax({
-        url: 'includes/php/postQueryToDB.php',
+        url: 'includes/handlers/postQueryToDB.php',
         type: 'POST',
         cache: false,
         data: {sql: sql}
     });
 };
+
+var getSessionVar = function (varName) {
+    return $.ajax({
+        url: 'includes/handlers/getSessionVar.php',
+        type: 'GET',
+        cache: false,
+        data: {varName: varName}
+    });
+};
+
 
 var mapDataManager = function () {
     var url = window.location.href;
@@ -100,7 +110,6 @@ var getDataToIndexPage = function () {
     getDataFromDB("select * from 74_spot").done(function (data) {
         initMap();
         spots = JSON.parse(data);
-        console.log(spots);
         for (var i = 0; i < spots.length; i++) {
             var marker = createMarker(i);
             self.markers.push(marker);
@@ -137,6 +146,7 @@ var getDataToIndexPage = function () {
 var getDataToSpotsPage = function () {
     var availableTags = [];
     resetFilter();
+    $('#resetFilter').click(resetFilter);
     $.ajax({
         url: assignSpotsToGoogleMapsMarkers()
     }).done(function () {
@@ -225,11 +235,13 @@ var indexPagePostsImplementor = function () {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
             var img = typeof(post.img_name) != "undefined" && post.img_name != "" ? "<img class='postImage' src='includes/img/" + post.img_name + ".png'>" : "";
             $('#posts').append("<article>" +
+                "<section class='postDetails'>" +
                 "<img src='includes/img/logo.jpg' class='postUserPic' alt='user'>" +
                 "<br>" +
                 "<h2>" + post.username + "</h2>" +
                 "<h4>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</h4>" +
-                "<h2>" + post.msg + "</h2>" +
+                "<h3>" + post.msg + "</h3>" +
+                "</section>" +
                 img +
                 "</article>");
         });
@@ -395,7 +407,6 @@ var getPassedTimeStringFromLastModifiedPostDate = function (date) {
 };
 
 var insertNewSpotToDB = function(){
-
     var params = getUrlParams(window.location);
     var sql = "INSERT INTO 74_spot (`name`, latitude, longitude,rank,surfing_level,wave_direction,wave_break_type," +
         "bottom_type,wave_height,season,city,distance_from_me,optimal_wind,region,tempreture,wave_timing,favourite) VALUES (" +
@@ -422,5 +433,4 @@ $(document).ready(function() {
         $( this ).click({num: index+1, updatedNeeded: true},changeRankStars);
     });
     $('#submitBtn').click(insertNewSpotToDB);
-    $('#resetFilter').click(resetFilter);
 });

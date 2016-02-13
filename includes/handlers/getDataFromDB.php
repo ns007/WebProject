@@ -7,7 +7,7 @@
     mysqli_set_charset($connection, "utf8");
 
     $sql = $_GET['sql'];
-    $res = mysqli_query($connection, $sql);
+    $res = mysqli_query($connection, stripslashes($sql));
     $row2 = array();
     while ($row = mysqli_fetch_assoc($res)) {
         array_push($row2, $row);

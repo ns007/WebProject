@@ -15,6 +15,8 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="includes/js/mySpotGoogleMapScripts.js"></script>
+    <script src="includes/js/logout.js"></script>
+    <script src="includes/js/header.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 </head>
@@ -22,19 +24,21 @@
 <div id="wrapper">
     <header id="glbHeader">
         <section id="logos-container">
-            <a href="#" id="userPic"></a>
+            <section id="userCont">
+                <a href="#" id="userPic"></a>
+                <a href="#" id="logoutButton">התנתק</a>
+            </section>
             <a href="#" id="logo"></a>
         </section>
         <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
-            <li class="firstNavLink"><a href="index.html">דף הבית</a></li>
+            <li class="firstNavLink"><a href="index.php">דף הבית</a></li>
             <li><a href="#" class="selected">ספוטים</a></li>
-            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="newspot.php">הוסף ספוט</a></li>
             <li><a href="#">עדכון תנאי חוף</a></li>
             <li><a href="#">התראות</a></li>
-
         </ul>
     </nav>
     <div class="clear"></div>
@@ -42,7 +46,7 @@
         <div class="dropdown filter">
             <img src="includes/img/filter.jpg" type="button" data-toggle="dropdown" id="filterImg"/>
             <ul class="dropdown-menu pull-right">
-                <li class="li" id="filterHead" style="height: 35px;background: #D6D6D6">פילטר
+                <li class="li" id="filterHead">
                 </li>
                 <li class="li">
                     <label>גובה גלים</label> <br>
@@ -90,8 +94,7 @@
         <label><input type="text" id="txtSrc" placeholder="...חיפוש"/></label>
         <input type="image" src="includes/img/love.jpg" alt="like" width="29" height="26" id="loveBtn">
     </nav>
-    <div id="map" style="height: 515px">
-
+    <div id="map">
     </div>
     <script src="includes/js/spots.js"></script>
     <script async defer
@@ -100,7 +103,7 @@
     <section id="footerNav">
         <input type="image" src="includes/img/setting.jpg" alt="filter" id="settingBtn">
         <h2 id="resetFilter">כבה פילטר</h2>
-        <input type="image" src="includes/img/navigate.jpg" alt="like"  id="navigateBtn">
+        <input type="image" src="includes/img/navigate.jpg" alt="like" id="navigateBtn">
     </section>
 </div>
 </body>

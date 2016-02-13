@@ -21,10 +21,9 @@ var isFiltered = function(marker){
     return false;
 };
 
-var wave_direction = {dir:"ימין"};
+var wave_direction = {dir:""};
 var resetFilter = function(){
     filter = { waveHeight: true, distance: true, breakType: true, breakDir: true, level: true, name: true };
-    setRelevantMarkers();
     $('#rangeInput').val('10');
     $('#rangeText').text("10M");
     $('#distRangeInput').val('16');
@@ -32,7 +31,7 @@ var resetFilter = function(){
     $('input[type=radio]').attr('checked',false);
     $('#break1Img').removeClass("breakDirectionImgBackgroung");
     $('#break2Img').removeClass("breakDirectionImgBackgroung");
-    wave_direction.dir = "ימין";
+    setRelevantMarkers();
 };
 
 var setRelevantMarkers = function(){

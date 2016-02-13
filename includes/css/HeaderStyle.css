@@ -18,16 +18,26 @@ header{
 	min-width:405px;
 }
 
+#userCont{
+	float: left;
+	margin: 1.2% auto;
+}
+
 #userPic{
-	background: url('../img/logo.jpg');
 	display: block;
 	width: 13%;
 	min-width:100px;
-	height: 139px;
-	float: left;
-	background-size:100%;
+	min-height:65px;
+	height: 100px;
+	background-size:100% 100%;
 	background-repeat:no-repeat;
+	-webkit-border-radius: 100%;
 }
+
+#logoutButton{
+	display: block;
+}
+
 #logo{
 	background: url('../img/AppLogo.jpg') no-repeat;
 	display:block;
@@ -53,9 +63,7 @@ header{
 		height: 37px;
 		/*
 		float:right;
-				margin-top:5%;
-				margin-right:5%;*/
-
+		margin-right:5%;*/
 		position: absolute;
 		top:5%;
 		right: 7%;
@@ -68,12 +76,13 @@ header{
 		min-width:200px;
 		max-width:304px;
 		height: 100px;
+		margin: 2%;
 	}
 
 	#userPic{
 		width: 8%;
 		min-width:70px;
-		height: 100px;
+		height: 8%;
 		float: left;
 	}
 

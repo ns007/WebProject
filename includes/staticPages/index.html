@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="includes/js/jquery-2.1.4.min.js"></script>
     <script src="includes/js/mySpotGoogleMapScripts.js"></script>
+    <script src="includes/js/logout.js"></script>
+    <script src="includes/js/header.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -19,16 +21,19 @@
 <div id="wrapper">
     <header id="glbHeader">
         <section id="logos-container">
-            <a href="#" id="userPic"></a>
+            <section id="userCont">
+                <a href="#" id="userPic"></a>
+                <a href="#" id="logoutButton">התנתק</a>
+            </section>
             <a href="#" id="logo"></a>
         </section>
         <a href="#" id="hamburgerButton"></a>
     </header>
     <nav id="navMenu" class="navMenuState">
         <ul id="menu">
-            <li><a href="#"  class="selected">דף הבית</a></li>
-            <li><a href="spots.html">ספוטים</a></li>
-            <li><a href="newspot.html">הוסף ספוט</a></li>
+            <li><a href="#" class="selected">דף הבית</a></li>
+            <li><a href="spots.php">ספוטים</a></li>
+            <li><a href="newspot.php">הוסף ספוט</a></li>
             <li><a href="#">עדכון תנאי חוף</a></li>
             <li><a href="#">התראות</a></li>
 
@@ -37,7 +42,8 @@
     <section dir="rtl">
         <h2><b>הספוט שלי:</b></h2>
         <section id="spotInfo">
-            <span id="editFavouriteSpotPencil" class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal" data-target="#spotsModal"></span>
+            <span id="editFavouriteSpotPencil" class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="modal"
+                  data-target="#spotsModal"></span>
             <h2 id="spotName"></h2>
             <div class="clear"></div>
             <h3 id="spotLocation"></h3>

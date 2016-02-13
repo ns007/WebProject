@@ -143,16 +143,25 @@ menu, nav, section { display: block; }
     width:100%;
     float:right;
     border-bottom: solid black 1px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
     text-align: right;
 }
 
-#posts > article > h2{
+#posts > article h2,
+#posts > article h3{
+    width: 50%;
+    float: right;
+    margin-top: 0px;
+}
+
+#posts > article h4{
     width: 50%;
     float: right;
 }
 
-#posts > article > h4{
-    width: 50%;
+.postDetails{
+    width: 70%;
     float: right;
 }
 
@@ -162,8 +171,11 @@ menu, nav, section { display: block; }
 
 .postImage{
     display:block;
-    width:23%;
-    padding:1.5%;
+    width:17%;
+    height: 100%;
+    padding-left:1%;
+    padding-bottom:1.5%;
+    padding-top:1.5%;
 }
 /*==================EndPosts===================*/
 
@@ -196,6 +208,8 @@ menu, nav, section { display: block; }
 #filterHead{
     height: 20px;
     text-align: center;
+    height: 35px;
+    background: #D6D6D6;
 }
 .filter > ul > li{
     width: 336px;
@@ -214,13 +228,13 @@ menu, nav, section { display: block; }
     margin-top: 20px;
 }
 #break1Img{
-    margin-left: 20px;
-    float: left;
+    margin-right: 20px;
+    float: right;
     cursor: pointer;
 }
 #break2Img{
-    margin-right: 20px;
-    float: right;
+    margin-left: 20px;
+    float: left;
     cursor: pointer;
 }
 

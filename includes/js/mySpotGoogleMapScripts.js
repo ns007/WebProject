@@ -1,7 +1,3 @@
-/**
- * Created by ysapir on 12/28/2015.
- */
-
 var self = this;
 self.markers = [];
 self.spots = [];
@@ -256,34 +252,36 @@ var spotPagePostsImplementor = function () {
         posts.forEach(function (post) {
             var passedTimeStringFromLastModifiedPostDate = getPassedTimeStringFromLastModifiedPostDate(post.date);
             $('#posts').append("<article>" +
-                    "<section class='postGeneralDetailsBox'>" +
-                        "<section class='postGeneralDetails'>" +
-                            "<h2 class='postUserName'>darom surfschool</h2>" +
-                            "<p class='postUpdateTime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</p>" +
-                        "</section>" +
-                        "<img src='includes/img/logo.jpg' alt='user'>" +
-                        "<p class='postMsg'>" + post.msg + "</p>" +
-                    "</section>" +
-                    "<section class='surfConditionDetails'>" +
-                        "<p class='surfConditionDetailsHeader'>תנאי גלישה,</p>" +
-                        //"<span class='glyphicon glyphicon-thumbs-up'></span>" +
-                        "<img src='includes/img/like.png' alt='like'>" +
-                    "</section>" +
-                    "<section class='userCurrnetConditionsUpdate'>" +
-                        "<section class='updatePair'>" +
-                            "<h4 class='spotDataKey'>רוח</h4>" +
-                            "<h2 class='spotDataValue'>" + post.crnt_wind + "</h2>" +
-                        "</section>" +
-                        "<section class='updatePair'>" +
-                            "<h4 class='spotDataKey'>רמה</h4>" +
-                            "<h2 class='spotDataValue'>" + post.crnt_level + "</h2>" +
-                        "</section>" +
-                        "<section class='waveMeterPair'>" +
-                            "<div class='clear'></div>" +
-                            "<img src='includes/img/wave-spotdetails.png' alt='wave' class='floatRight'>" +
-                            "<h2 class='floatRight'>" + post.crnt_wave_height + " מטר" + "</h2>" +
-                        "</section>" +
-                    "</section>" +
+                "<section class='postGeneralDetailsBox'>" +
+                "<img class='dynamicPostImg' src='includes/img/logo.jpg' alt='user'>" +
+                "<section class='postGeneralDetails'>" +
+                "<h2 class='postUserName'>darom surfschool</h2>" +
+                "<br><br>" +
+                "<h4 class='postUpdateTime'>" + "עדכן תנאי גלישה לפני " + passedTimeStringFromLastModifiedPostDate + "</h4>" +
+                "</section>" +
+                "<p class='postMsg'>" + post.msg + "</p>" +
+                "</section>" +
+                "<section class='surfConditionDetails'>" +
+                "<p class='surfConditionDetailsHeader'>תנאי גלישה,</p>" +
+                    //"<span class='glyphicon glyphicon-thumbs-up'></span>" +
+                "<img src='includes/img/like.png' alt='like'>" +
+                "</section>" +
+                "<section class='userCurrnetConditionsUpdate'>" +
+                "<section class='updatePair'>" +
+                "<h4 class='spotDataKey'>רוח</h4>" +
+                "<h2 class='spotDataValue'>" + post.crnt_wind + "</h2>" +
+                "</section>" +
+                "<section class='updatePair'>" +
+                "<h4 class='spotDataKey'>רמה</h4>" +
+                "<h2 class='spotDataValue'>" + post.crnt_level + "</h2>" +
+                "</section>" +
+                "<section class='waveMeterPair'>" +
+                "<div class='clear'></div>" +
+                "<img src='includes/img/wave-spotdetails.png' alt='wave' class='floatRight'>" +
+                "<br><br><br>" +
+                "<h2 class='floatRight'>" + post.crnt_wave_height + "מטר" + "</h2>" +
+                "</section>" +
+                "</section>" +
                 "</article>");
         });
     });

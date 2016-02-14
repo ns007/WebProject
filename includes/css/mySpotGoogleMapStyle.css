@@ -1,5 +1,3 @@
-/*Created by netanel shilo
- sagi maday and yaniv sapir*/
 * { margin: 0; padding: 0; }
 
 article, aside, figure, footer, header,
@@ -138,7 +136,9 @@ menu, nav, section { display: block; }
 	height:10px;
 	width:100%;
 }*/
-
+#posts{
+    width:100%;
+}
 #posts > article{
     width:100%;
     float:right;
@@ -148,15 +148,18 @@ menu, nav, section { display: block; }
     text-align: right;
 }
 
-#posts > article h2,
-#posts > article h3{
+#posts > article h2{
     width: 50%;
     float: right;
     margin-top: 0px;
 }
-
+#posts > article h3{
+    width: 100%;
+    float: right;
+    margin-top: 0px;
+}
 #posts > article h4{
-    width: 50%;
+    width: 70%;
     float: right;
 }
 
@@ -325,6 +328,7 @@ menu, nav, section { display: block; }
     float:right;
     direction:rtl;
     width:100%;
+    margin-bottom:10px;
 }
 
 #extendedSpotDetailsHeader {
@@ -344,7 +348,7 @@ menu, nav, section { display: block; }
 
 #spotDataRightBlock {
     height:280px;
-    width:57%;
+    width:50%;
     float: left;
     padding-top:30px;
     border-right: #aaaaaa solid 2px;
@@ -355,15 +359,21 @@ menu, nav, section { display: block; }
     width:43%;
     float: left;
     padding-top:30px;
+    width:50%;
 }
 
 .spotDataKey {
     padding-right:40px;
     margin-top: 3px;
 }
+.spotDataKey h4{
+    padding-right:40px;
+    margin-top: 3px;
+
+}
 
 .spotDataValue {
-    padding-right:40px;
+    padding-right:39px;
     margin-top:-15px;
     margin-bottom:8px;
 }
@@ -372,25 +382,40 @@ menu, nav, section { display: block; }
 /*=====================Posts===================*/
 
 .postGeneralDetailsBox{
+    display:block;
     border-top: black dashed 3px;
     width:100%;
+    height:100%;
     direction:rtl;
-    margin-top:10px;
+
 }
 .postGeneralDetails{
+    display:block;
     margin-top:30px;
     float:left;
-    width:70%;
+    width:85%;
+    min-height:130px;
+}
+.dynamicPostImg{
+    float:right;
+    height:160px;
+    margin:0px;
+    width:15%;
 }
 .postUserName{
+    width:100%;
     color: #460E56;
     margin:0px;
 }
 .postUpdateTime{
+    width:100%;
     font-size: 140%;
+    margin:0px;
+    direction:rtl;
 }
 
 .postMsg{
+    width:100%;
     direction:rtl;
     font-size:160%;
 }
@@ -422,12 +447,12 @@ menu, nav, section { display: block; }
 }
 .updatePair{
     padding-top:35px;
-    padding-right:20px;
+    padding-right:0px;
     width:33%;
     float:left
 }
 .waveMeterPair{
-    padding-top:35px;
+    padding-top:10px;
     direction:rtl;
     width:33%;
     float:left;
@@ -460,6 +485,40 @@ menu, nav, section { display: block; }
     background:rgb(117, 169, 249);
     position: relative; bottom:0px;
 }
+/*===========================403==============================*/
+.loginFailSec{
+    display:block;
+    margin:0 auto;
+    margin-top:5%;
+    width:25%;
+    min-width:324px;
+    border:#000000 solid 5px;
+    padding:25px;
+}
+.loginFail{
+    color:#FF000C;
+    font-size:200%;
+}
+.loginFail span{
+    font-size:100%;
+    color:#000000;
+}
+.loginFailLink{
+    color:#0000FF;
+    font-size:100%;
+}
+#logoFail{
+    background: url('../img/AppLogo.jpg') no-repeat;
+    display:block;
+    width: 40%;
+    min-width:304px;
+    max-width:500px;
+    height: 139px;
+    background-size:100%;
+    background-repeat:no-repeat;
+    margin:0 auto;
+}
+/*============================end403============================*/
 /*===================EndTitle==================*/
 /*=======================EndNewpotsPage========================*/
 /*=======================StartDeskTopPage========================*/
@@ -672,7 +731,13 @@ menu, nav, section { display: block; }
         margin-left:15%;
         border:dotted #999999 1px;
     }
-
+    .postGeneralDetails{
+        width:60%;
+    }
+    .dynamicPostImg{
+        width:40%;
+        min-height:184px;
+    }
     /*==================EndWaterInfo===================*/
 }
 /*========================EndSpotsPage=========================*/

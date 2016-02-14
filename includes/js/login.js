@@ -1,6 +1,3 @@
-/**
- * Created by ysapir on 2/13/2016.
- */
 var password = document.getElementById("regPassword");
 var confirmPassword = document.getElementById("confirmPassword");
 var login = function () {

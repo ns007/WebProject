@@ -36,7 +36,7 @@ if($_SESSION["isLogin"] == true) {
     echo "<nav id='navMenu' class='navMenuState'>";
     echo "<ul id='menu'>";
     echo "<li class='firstNavLink'><a href='index.php'>דף הבית</a></li>";
-    echo "<li><a href='spots.php'>ספוטים</a></li>";
+    echo "<li><a href='spots.php' class='selected'>ספוטים</a></li>";
     echo "<li><a href='newspot.php'>הוסף ספוט</a></li>";
     echo "<li><a href='#'>עדכון תנאי חוף</a></li>";
     echo "<li><a href='#'>התראות</a></li>";

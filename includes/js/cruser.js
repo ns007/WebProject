@@ -1,7 +1,3 @@
-/**
- * Created by ysapir on 12/28/2015.
- */
-
 var positionMarker = {};
 var lat = 0;
 var lng = 0;

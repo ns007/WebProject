@@ -467,6 +467,7 @@ menu, nav, section { display: block; }
     text-align:center;
     color: #460E56;
     margin:0px;
+    float: none;
 }
 
 #addSpotButton{
@@ -620,6 +621,11 @@ menu, nav, section { display: block; }
     }
     #wrapper{
         width: 100%;
+    }
+
+    #newSpotTitle{
+        margin : 0 auto;
+        width:40%;
     }
     #getDrvDirections{
         display:block;
